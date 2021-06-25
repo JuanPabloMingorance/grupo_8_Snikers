@@ -8,6 +8,6 @@ aprovechando el auge del **E-Commerce**
 - Juan Pablo Mingorance
 - Ludmila Morelli
 - Brian Lopez
-- Moises Condori 
+- Moises Orlando Condori 
 
 
