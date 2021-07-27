@@ -3,6 +3,7 @@ header{
     flex-wrap: wrap;
     width: 100%;
     height: 100px;
+    font-family: var(--font-family);
 }
 
 
@@ -16,17 +17,52 @@ header nav{
     background-color: var(--color-azul);
 }
 
+header nav .img{
+/*     background-color: var(--color-gris);
+ */ 
+    padding-right: 10px;
+    order: 1;
+    width: 100px;
+    height: 50px;
+}
+
+header nav .img img{
+    width: 95%;
+}
 
 header nav ul{
+    display: flex;
+    flex-direction: column;
     display: inline;
     align-self: flex-end;
     margin-bottom: 15px;
 }
 
+
+header nav ul{
+    display: none;
+}
+
+header nav div.icon-burger{
+    align-self: center;
+    font-size: 40px;
+    width: auto;
+}
+
 header nav ul li{
+    margin: 0px 5px 0px;
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-gris);
+    border-radius: 5px;
     display: inline;
 }
 
+header nav ul li:first-child{
+    margin-left: 40px;
+}
+
+
 header nav div.search-bar{
+    order: 2;
     align-self: center;
 }
