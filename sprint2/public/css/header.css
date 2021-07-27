@@ -30,32 +30,49 @@ header nav .img img{
     width: 95%;
 }
 
-
+header nav.logo-and-search{
+    z-index: 0;
+}
 
 
 header nav label{
     align-self: center;
 }
 
-header nav input[type="checkbox"]{
+header  input[type="checkbox"]{
     display: none;
 }
 
-input[type=checkbox]:checked ~ ul{
+input[type=checkbox]:checked ~ nav.menu{
     display: inline;
+    background-color: var(--color-naranja);
+    z-index: 1;
 }
 
-header nav ul{
+header nav.menu ul{
     display: flex;
     flex-direction: column;
-    display: inline;
-    align-self: flex-end;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
+    padding-bottom: 5px;
+    margin-top: 3px;
 }
 
+header nav.menu ul li{
+    margin-bottom: 5px;
+}
 
-header nav ul{
+header nav.menu ul li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+header nav.menu{
+    width: 33%;
     display: none;
+    height: 105px;
 }
 
 header nav div.icon-burger{
@@ -72,9 +89,9 @@ header nav ul li{
     display: inline;
 }
 
-header nav ul li:first-child{
-    margin-left: 40px;
-}
+/*  header nav ul li:last-child{
+    padding-bottom: 4px;
+} */
 
 
 header nav div.search-bar{
