@@ -39,6 +39,12 @@ header nav label{
     align-self: center;
 }
 
+header nav.logo-and-search input:focus{
+    border-color: var(--color-naranja);
+    box-shadow: 0px 1px 1px var(--color-naranja) inset, 0px 0px 8px var(--color-naranja); 
+    outline: 0 none; 
+}
+
 header  input[type="checkbox"]{
     display: none;
 }
@@ -46,7 +52,11 @@ header  input[type="checkbox"]{
 input[type=checkbox]:checked ~ nav.menu{
     display: inline;
     background-color: var(--color-naranja);
-    z-index: 1;
+    border-radius: 3px;
+}
+
+header label{
+    cursor: pointer;
 }
 
 header nav.menu ul{
@@ -101,5 +111,6 @@ header nav div.search-bar{
 }
 
 header nav div.search-bar input{
+    border-radius: 5px;
     width: 100%;
 } 
