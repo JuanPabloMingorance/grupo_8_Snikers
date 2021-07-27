@@ -30,6 +30,21 @@ header nav .img img{
     width: 95%;
 }
 
+
+
+
+header nav label{
+    align-self: center;
+}
+
+header nav input[type="checkbox"]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ ul{
+    display: inline;
+}
+
 header nav ul{
     display: flex;
     flex-direction: column;
@@ -65,4 +80,9 @@ header nav ul li:first-child{
 header nav div.search-bar{
     order: 2;
     align-self: center;
+    width: 33%;
 }
+
+header nav div.search-bar input{
+    width: 100%;
+} 
