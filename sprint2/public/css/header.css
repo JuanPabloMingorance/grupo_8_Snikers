@@ -90,13 +90,12 @@ header nav.menu ul li a{
     text-align: center;
     margin: 0px auto;
     border-radius: 5px;
-    transition: all .8s;
 }
 
-header nav.menu ul li a:hover{
+/* header nav.menu ul li a:active{
     background-color: var(--color-azul);
     color: var(--color-negro);
-}
+} */
 
 
 header nav.menu{
@@ -152,6 +151,7 @@ header nav div.search-bar input{
         height: 50px;
         width: 100%;
         display: block;
+        background-color: var(--color-naranja);
     }
     
     header .img{
@@ -176,5 +176,22 @@ header nav div.search-bar input{
     }
     header nav div.search-bar{
         width: 50%;
+    }
+    header nav.menu ul li a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0px auto;
+        border-radius: 5px;
+        transition: all 1s;
+    }
+
+    header nav.menu ul li a:hover{
+        background-color: var(--color-azul);
+        color: var(--color-negro);
+    }
+
+    header div.search-bar input:focus ~ i{
+        color: var(--color-naranja);
     }
 }
