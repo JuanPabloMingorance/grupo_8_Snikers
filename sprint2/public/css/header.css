@@ -27,8 +27,10 @@ header nav .img{
 }
 
 header nav .img img{
-    width: 95%;
+    width: 100%;
 }
+
+
 
 header nav.logo-and-search{
     z-index: 0;
@@ -126,6 +128,14 @@ header nav div.search-bar{
     order: 2;
     align-self: center;
     width: 33%;
+    position: relative;
+}
+
+header nav div.search-bar i{
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    color: var(--color-azul);
 }
 
 header nav div.search-bar input{
@@ -134,6 +144,37 @@ header nav div.search-bar input{
 } 
 
 
-header nav label:hover{
+/* header nav label:hover{
     color: var(--color-naranja);
+} */
+@media (min-width: 768px) {
+    header nav.menu {
+        height: 50px;
+        width: 100%;
+        display: block;
+    }
+    
+    header .img{
+        height: 100%;
+        width: 15%;
+    }
+
+    header .img img{
+        width: 80%;
+    }
+
+    header nav.menu ul{
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    header nav.menu ul li{
+        margin: 0px auto;
+        width: 20%;
+    }
+    header nav.logo-and-search label{
+        display: none;
+    }
+    header nav div.search-bar{
+        width: 50%;
+    }
 }
