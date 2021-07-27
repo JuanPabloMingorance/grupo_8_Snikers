@@ -8,9 +8,11 @@ main.cart .aviso{
     background-color:#f76d02;
     color: white;
     padding: 10px;
-
 }
-
+main.cart{
+    z-index: -1;
+    text-align: center;
+}
 main.cart .aviso li{
     list-style: none;
     display: inline-block;
@@ -22,6 +24,7 @@ main.cart h2{
 main.cart h5{
     font-size: 20px;
     margin: 10px;
+    
 }
 
 main.cart section.resumen{
