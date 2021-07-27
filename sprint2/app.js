@@ -11,5 +11,8 @@ app.get('/cart',(req,res) => res.sendFile(path.join(__dirname, 'views','productC
 app.get('/login',(req,res) => res.sendFile(path.join(__dirname, 'views','login.html')));
 app.get('/register',(req,res) => res.sendFile(path.join(__dirname, 'views','register.html')));
 app.get('/footer',(req,res) => res.sendFile(path.join(__dirname, 'views','footer.html')));
+app.get('/cartEntrega',(req,res) => res.sendFile(path.join(__dirname, 'views','entrega.html')));
+app.get('/cartPago',(req,res) => res.sendFile(path.join(__dirname, 'views','pago.html')));
+app.get('/cartTerminado',(req,res) => res.sendFile(path.join(__dirname, 'views','terminado.html')));
 
 app.listen(port, () => console.log('Servidor en el puerto ' + port));

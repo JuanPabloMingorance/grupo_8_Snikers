@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main.cart .aviso{
+    background-color:#f76d02;
+    color: white;
+    padding: 10px;
+
+}
+
+main.cart .aviso li{
+    list-style: none;
+    display: inline-block;
+}
+
+main.cart h2{
+    margin: 10px;
+}
+main.cart h5{
+    font-size: 20px;
+    margin: 10px;
+}
+
+main.cart section.resumen{
+    font-size: 20px;
+    display: flex;
+    flex-direction:column;
+    margin: 10px;
+}
+
+main.cart section article.uno{
+margin:10px;
+display: flex;
+justify-content: space-between;
+}
+
+main.cart section article.dos{
+margin:10px;
+display: flex;
+justify-content: space-between;
+}
+
+main.cart section article.tres{
+    margin:10px;
+    display: flex;
+justify-content: space-between;
+    }
+main.cart button{
+    width: 100%;
+    background-color: black;
+    margin: 10px;
+    padding: 20px;
+}
+
+
+main.cart button a{
+text-decoration: none;
+color: white;
+}
+
+main.cart div.pago img{
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+}
+main.cart div h4{
+font-size: 20px;
+margin: 10px;
+}
