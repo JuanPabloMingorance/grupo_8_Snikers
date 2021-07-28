@@ -1,1 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+/* Variables */
+
+:root{
+    --color-azul: #0083ba;
+    --color-naranja: #f76d02;
+    --color-gris: #c4c4c4 ;
+    --color-negro: #000000;
+    --font-family: "Rubik", sans-serif;
+}
+
+/* General CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
