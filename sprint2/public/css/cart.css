@@ -7,15 +7,21 @@
 main.cart .aviso{
     background-color:#f76d02;
     color: white;
-    padding: 10px;
 }
 main.cart{
     z-index: -1;
     text-align: center;
 }
+
+main.cart .aviso li.carrito{
+    color: black;
+    opacity: 100%;
+}
 main.cart .aviso li{
     list-style: none;
     display: inline-block;
+    margin: 5px;
+    opacity: 30%;
 }
 
 main.cart h2{
