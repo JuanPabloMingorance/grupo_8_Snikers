@@ -1,0 +1,201 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100px;
+    font-family: var(--font-family);
+}
+
+
+
+header nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-azul);
+}
+
+header nav .img{
+/*     background-color: var(--color-gris);
+ */ 
+    padding-right: 10px;
+    order: 1;
+    width: 100px;
+    height: 50px;
+}
+
+header nav .img img{
+    width: 100%;
+}
+
+
+
+header nav.logo-and-search{
+    z-index: 0;
+}
+
+
+header nav label{
+    align-self: center;
+}
+
+header nav.logo-and-search input:focus{
+    border-color: var(--color-naranja);
+    box-shadow: 0px 1px 1px var(--color-naranja) inset, 0px 0px 8px var(--color-naranja); 
+    outline: 0 none; 
+}
+
+header  input[type="checkbox"]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ nav.menu{
+    display: inline;
+    background-color: var(--color-naranja);
+    border-radius: 3px;
+}
+
+header label{
+    transition: all .8s;
+    cursor: pointer;
+}
+
+header nav.menu ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
+    padding-bottom: 5px;
+    margin-top: 3px;
+}
+
+header nav.menu ul li{
+    display: flex;  
+    margin-bottom: 5px;
+    width: 90%;
+    border: none;
+}
+
+
+header nav.menu ul li:first-child{
+    margin-top: 2px;
+}
+
+header nav.menu ul li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+/* header nav.menu ul li a:active{
+    background-color: var(--color-azul);
+    color: var(--color-negro);
+} */
+
+
+header nav.menu{
+    z-index: 1;
+    width: 33%;
+    display: none;
+    height: 105px;
+}
+
+header nav div.icon-burger{
+    align-self: center;
+    font-size: 40px;
+    width: auto;
+}
+
+header nav ul li{
+    margin: 0px 5px 0px;
+    background-color: var(--color-gris);
+    border: 1px solid var(--color-gris);
+    border-radius: 5px;
+    display: inline;
+}
+
+/*  header nav ul li:last-child{
+    padding-bottom: 4px;
+} */
+
+
+header nav div.search-bar{
+    order: 2;
+    align-self: center;
+    width: 33%;
+    position: relative;
+}
+
+header nav div.search-bar i{
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    color: var(--color-azul);
+}
+
+header nav div.search-bar input{
+    border-radius: 5px;
+    width: 100%;
+} 
+header nav div.search-bar input:focus ~ i{
+    color: var(--color-naranja);
+}
+
+
+/* header nav label:hover{
+    color: var(--color-naranja);
+} */
+@media (min-width: 768px) {
+    header nav.menu {
+        height: 50px;
+        width: 100%;
+        display: block;
+        background-color: var(--color-naranja);
+    }
+    
+    header .img{
+        height: 100%;
+        width: 15%;
+    }
+
+    header .img img{
+        width: 80%;
+    }
+
+    header nav.menu ul{
+        flex-direction: row;
+        padding-top: 10px;
+    }
+    header nav.menu ul li{
+        margin: 0px auto;
+        width: 20%;
+    }
+    header nav.logo-and-search label{
+        display: none;
+    }
+    header nav div.search-bar{
+        width: 50%;
+    }
+    header nav.menu ul li a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0px auto;
+        border-radius: 5px;
+        transition: all 1s;
+    }
+
+    header nav.menu ul li a:hover{
+        background-color: var(--color-azul);
+        color: var(--color-negro);
+    }
+
+    header .search-bar input:focus ~ i{
+        color: var(--color-naranja);
+    }
+}
