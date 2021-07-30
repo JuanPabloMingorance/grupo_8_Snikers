@@ -1,3 +1,27 @@
 .producto{
+    z-index: -1;
     background-color: var(--color-gris);
 }
+
+.producto main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 60px auto 20px;
+    border: 2px solid var(--color-negro);
+    width: 90vw;
+    height: 100vh;
+    font-family: var(--font-family);
+}
+
+.producto main h3{
+    align-self: flex-start;
+    display: block;
+    margin: 0px auto;
+}
+
+.producto main section{
+    width: 100%;
+    align-self: center;
+}
+

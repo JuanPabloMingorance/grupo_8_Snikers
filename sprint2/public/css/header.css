@@ -99,6 +99,7 @@ header nav.menu ul li a{
 
 
 header nav.menu{
+    z-index: 1;
     width: 33%;
     display: none;
     height: 105px;
@@ -191,7 +192,7 @@ header nav div.search-bar input{
         color: var(--color-negro);
     }
 
-    header div.search-bar input:focus ~ i{
+    header .search-bar input:focus ~ i{
         color: var(--color-naranja);
     }
 }
