@@ -206,6 +206,51 @@ font-size: 20px;
 }
 
 
-.producto main .container .others .muestras .muestra .descr text{
+@media (min-width: 768px) {
 
+    .producto main{
+        margin-top: 55px;
+    }
+
+    .producto main .container h1{
+        margin: 30px;
+        border-bottom: 2px solid black;
+    }
+
+    .producto main .container .imagen-producto .descripcion .principal h3{
+        border-bottom: solid 2px black;
+        margin-bottom: 50px;
+    }
+
+    .producto main .container .imagen-producto .descripcion .principal .texto{
+        font-size: 1.2rem;
+    }
+
+    .producto main .container .imagen-producto .descripcion .producto .icons .icono{
+        margin: 40px;
+    }
+
+    .producto .container .imagen-producto .descripcion .icons .icono i{
+        font-size: 90px;
+    }
+
+    .producto .container .imagen-producto .descripcion .icons .icono i:hover{
+        color: var(--color-naranja);
+    }
+
+    .producto main .container .others h2{
+        margin: 40px;
+        border-bottom: solid black 1px;
+        width: auto;
+    }
+
+    .producto main .container .others .muestras{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .producto main .container .others .muestras .muestra{
+        width: 50%;
+        margin-bottom: 70px;
+    }
 }
