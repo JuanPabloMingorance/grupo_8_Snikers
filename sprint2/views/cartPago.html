@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/3f21023fe6.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/css/pago.css">
     <title>CartPago</title>
 </head>
 <body>
@@ -42,52 +41,54 @@
 <section class="form-pago">
     <article>
         <div class="cuotas">
-            <P>todas las transacciones se realizan de manera segura</P>
-            <h4>cantidad de cuotas</h4>
+            <P>Todas las transacciones se realizan de manera segura.</P>
+            <h5>Cantidad de cuotas</h5>
+            <form class="form">
             <select name="cuotas" id="cuotas">
-                <option value="" selected hidden>Cantidad de Cuotas</option>
-                <option value="1">1</option>
-                <option value="3">3</option>
-                <option value="6">6</option>
-                <option value="12">12</option>
-                <option value="18">18</option>
+                <option value="" selected hidden>seleccione su opcion</option>
+                <option value="1">X1</option>
+                <option value="3">X3</option>
+                <option value="6">X6</option>
+                <option value="12">X12</option>
+                <option value="18">X18</option>
             </select>
         </div>
-    </article>
-<article>
-    <div>
-        <h5>Numero</h5>
-        <input type="number" name="numero" id="numero" placeholder="numero">
-    <label for="numero"></label>
+            <div class="lbl-numero">
+                <h5>Numero</h5>
+<input type="number" required>
+<label>
+</label>
+</div>
+<div class="lbl-numero">
+    <h5>titular de la tarjeta</h5>
+    <input type="text" required>
+    <label>
+
+    </label>
     </div>
-</article>
-<article>
-    <div class="icon">
-        <img src="/images/images.png" alt="">
-            <img src="/images/descarga (1).png" alt="">
-            <img src="/images/descarga (3).png" alt="">
-    </div>
-</article>
-<article>
-    <div>
-        <h5>titular de la tarjeta</h5>
-        <input type="text" name="titular de la tarjeta" id="titular de la tarjeta" placeholder="titular de la tarjeta">
-        <label for="titular de la tarjeta"></label>
-    </div> 
-</article>
-<article>
-    <div>
+    <div class="lbl-numero">
         <h5>Fecha de vencimiento</h5>
-        <input type="date" name="fecha" >
-        <small>fecha de caducidad de la tarjeta</small>
-    <H5>codigo de vencimiento</H5>
-        <input type="date" name="cv">
-    <small>ingrese el codigo de seguridad de su tarjeta</small>
-    </div>
-</article>
+        <input type="date" required>
+        <label>
+        </label>
+        </div>
+        <div class="lbl-numero">
+            <h5>Codigo de vencimiento</h5>
+            <input type="number" required>
+            <label>
+        
+            </label>
+            </div>
+
+
+    </article>
+
+
+
+
 </section>
     <div>
-        <button type="submit"><a href="/cartTerminado">Finalizar Compra</a></button>
+        <button type="submit"><a href="/cartFinal">Finalizar Compra</a></button>
         </div>
     <div>
         <p>Al hacer click en FINALIZAR COMPRA acepta los terminos y condiciones.</p>
@@ -112,7 +113,7 @@
         <a href="" class="instagram"><i class="fab fa-instagram"></i></a>
            </div>
            <div class="texto">
-        <p>argentina <br> </p>
+        <p>Argentina <br> </p>
            <p>Todos los Derechos Reservados</p>
            <p>Politica de Privacidad</p>
        </div>

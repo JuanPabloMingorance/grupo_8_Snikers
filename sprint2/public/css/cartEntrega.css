@@ -7,10 +7,11 @@
 main.entrega .aviso{
     background-color:#f76d02;
     color: white;
+    text-align: center;
 }
 main.entrega{
     z-index: -1;
-    text-align: center;
+    font-family: sans-serif;
 }
 
 main.entrega .aviso li.entrega{
@@ -25,6 +26,12 @@ main.entrega .aviso li{
     opacity: 30%;
 }
 
+main.entrega h4{
+    text-align: center;
+    font-size: 20px;
+margin-top: 30px;
+}
+
 main.entrega section.datos{
 margin: 10px;
 }
@@ -35,26 +42,22 @@ display: flex;
 justify-content: flex-start;
 }
 
+
 main.entrega section.envio article{
 margin: 20px;
 display: flex;
 justify-content: flex-start;
 }
 
-main.entrega section article div.type{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-}
-
-main.entrega section.envio article.zona{
-
+main.entrega div.sub{
+margin-left: 30px;
 }
 
 main.entrega div.correo{
     margin: 30px;
     display: flex;
-    justify-content: flex-start; 
+    flex-direction: row;
+    justify-content: space-between; 
 }
 
 main.entrega div.checkbox {
@@ -74,6 +77,7 @@ main.entrega button{
     background-color:black ;
     padding: 20px;
     margin-bottom: 50px;
+    color: white;
 }
 
 main.entrega button a{
@@ -85,8 +89,33 @@ main.entrega div.pago img{
     width: 100px;
     height: 50px;
     margin: 10px;
+    padding: 10px;
+    margin-bottom: 50px;
+    display: inline;
+
 }
-main.entrega div h4{
+main.entrega div h5{
 font-size: 20px;
-margin: 10px;
+margin-top: 30px;
+margin-left: 30px;
+}
+
+@media (min-width:768px){
+    main.entrega h4{
+    margin-top: 50px;
+    font-size: 30px;
+    }
+
+  
+
+
+
+
+
+
+
+
+
+
+
 }
