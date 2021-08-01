@@ -142,6 +142,9 @@ header nav div.search-bar input{
     border-radius: 5px;
     width: 100%;
 } 
+header nav div.search-bar input:focus ~ i{
+    color: var(--color-naranja);
+}
 
 
 /* header nav label:hover{
@@ -192,7 +195,7 @@ header nav div.search-bar input{
         color: var(--color-negro);
     }
 
-    header div.search-bar input:focus ~ i{
+    header .search-bar input:focus ~ i{
         color: var(--color-naranja);
     }
 }
