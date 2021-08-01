@@ -102,6 +102,7 @@ header nav.menu{
     width: 33%;
     display: none;
     height: 105px;
+    z-index: 1;
 }
 
 header nav div.icon-burger{

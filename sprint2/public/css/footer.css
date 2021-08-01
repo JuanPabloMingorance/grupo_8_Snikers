@@ -1,22 +1,22 @@
 footer{
-  background-color: black;
-  width: 100%;
-  padding: 10px;
-
+    background-color: black;
+    width: 100%;
+    padding: 10px;
+  
 }
 
 footer div.redes{
-display: flex;
-flex-direction: row-reverse;
-justify-content: space-around;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
 }
 
 footer div.texto{
- font-size: 10px;
- color:#fff;
- display: flex;
- flex-direction: row;
- justify-content: space-around;
+   font-size: 10px;
+   color:#fff;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
 }
 
 footer div.redes a{
