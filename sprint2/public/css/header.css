@@ -102,6 +102,10 @@ header nav.menu{
     width: 33%;
     display: none;
     height: 105px;
+<<<<<<< HEAD
+=======
+    z-index: 1;
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
 }
 
 header nav div.icon-burger{
@@ -141,6 +145,12 @@ header nav div.search-bar input{
     border-radius: 5px;
     width: 100%;
 } 
+<<<<<<< HEAD
+=======
+header nav div.search-bar input:focus ~ i{
+    color: var(--color-naranja);
+}
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
 
 
 /* header nav label:hover{
@@ -156,7 +166,10 @@ header nav div.search-bar input{
     
     header .img{
         height: 100%;
+<<<<<<< HEAD
         /*width: 15%;*/
+=======
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
         width: 15%;
     }
 
@@ -192,7 +205,11 @@ header nav div.search-bar input{
         color: var(--color-negro);
     }
 
+<<<<<<< HEAD
     header div.search-bar input:focus ~ i{
+=======
+    header .search-bar input:focus ~ i{
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
         color: var(--color-naranja);
     }
 }

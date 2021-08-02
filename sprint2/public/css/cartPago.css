@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main.pago .aviso{
+    background-color:#f76d02;
+    color: white;
+    text-align: center;
+}
+main.pago{
+    z-index: -1;
+    font-family: sans-serif;
+}
+
+main.pago .aviso li.pago{
+    color: black;
+    opacity: 100%;
+}
+main.pago .aviso li{
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+    opacity: 30%;
+}
+
+main.pago h1{
+    text-align: center;
+    margin: 20px;
+}
+
+main.pago h5{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+
+main.pago p{
+margin-bottom: 30px;
+text-align: center;
+}
+
+main.pago section.form-pago div.cuotas{
+    margin-bottom: 20px; 
+    
+}
+
+
+main.pago section.form-pago{
+    display: flex;
+    flex-direction: column;
+   margin: 30px 0;
+}
+
+main.pago section.form-pago div.lbl-numero{
+display: flex;
+flex-direction: column;
+} 
+
+main.pago section.form-pago div.lbl-numero input{
+    padding: 10px;
+    margin: 5px 0;
+    height: 25px;
+}
+
+main.pago button{
+    width: 100%;
+    background-color:black ;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+main.pago button a{
+    text-decoration: none;
+    color: white;
+    }
+
+main.pago p{
+    text-align: center;
+    font-size: 12px;
+}    
+
+main.pago div.pago img{
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+main.pago div h4{
+font-size: 20px;
+margin-top: 30px;
+display: flex;
+justify-content: flex-start;
+margin-left: 30px;
+}
+
+@media (min-width:768px){
+    main.pago h1{
+        margin: 50px;
+    }
+    
+    main.pago h5{
+      font-size: 20px;
+        
+    }
+
+    main.pago section.form-pago div.cuotas p{
+     font-size: 20px;
+        }
+
+        main.pago p{
+            text-align: center;
+            font-size: 16px;
+        } 
+
+}

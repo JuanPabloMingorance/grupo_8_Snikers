@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* Fonts */
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
 
 /* Variables */
@@ -24,8 +28,11 @@ a{
 
 li{
     list-style: none;
+<<<<<<< HEAD
 }
 /* Se agrega el fondo color azul a general*/
 body{
     background-color:#0083BA;
+=======
+>>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
 }
