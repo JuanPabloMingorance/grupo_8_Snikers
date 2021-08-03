@@ -3,17 +3,6 @@ footer{
     width: 100%;
     padding: 10px;
   
-<<<<<<< HEAD
-  }
-  
-  footer div.redes{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  }
-  
-  footer div.texto{
-=======
 }
 
 footer div.redes{
@@ -23,22 +12,11 @@ footer div.redes{
 }
 
 footer div.texto{
->>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
    font-size: 10px;
    color:#fff;
    display: flex;
    flex-direction: row;
    justify-content: space-around;
-<<<<<<< HEAD
-  }
-  
-  footer div.redes a{
-  background-color: white;
-  border-radius: 50%;
-  padding: 10px;
-  color: black;
-  }
-=======
 }
 
 footer div.redes a{
@@ -47,4 +25,3 @@ border-radius: 50%;
 padding: 10px;
 color: black;
 }
->>>>>>> 271da81d4d5a7e1ee714c6d79d27c0d365ee19f6
