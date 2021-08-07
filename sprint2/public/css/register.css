@@ -83,7 +83,7 @@
       color: rgb(124, 120, 120);
       text-decoration: underline;
     }
-    label{
+    label .registro1{
         color: gray;
         font-size: 35px;
         
@@ -163,7 +163,7 @@
           color: rgb(124, 120, 120);
           text-decoration: underline;
         }
-        label{
+        label.registro1 {
             color: gray;
             font-size: 35px;
             
@@ -198,8 +198,8 @@
       font-size: 10px;
       color:white;
     }
-    label{
-      color: gray;
+    label .registro1 {
+      color:gray;
       font-size: 25px;
       
   }
