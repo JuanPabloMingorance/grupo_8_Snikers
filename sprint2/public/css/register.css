@@ -1,6 +1,9 @@
-
-  
-    
+.registro{
+    margin: 0;
+    background: url(/imgregistro/fondoregistro2.jpg);
+     background-size: cover;
+     background-attachment: fixed;
+  }
   #codigob{
     
     width: 350px;
@@ -83,7 +86,7 @@
       color: rgb(124, 120, 120);
       text-decoration: underline;
     }
-    label .registro1{
+    .registro .label{
         color: gray;
         font-size: 35px;
         
@@ -163,7 +166,7 @@
           color: rgb(124, 120, 120);
           text-decoration: underline;
         }
-        label.registro1 {
+        .registro .label{
             color: gray;
             font-size: 35px;
             
@@ -198,8 +201,8 @@
       font-size: 10px;
       color:white;
     }
-    label .registro1 {
-      color:gray;
+    .registro .label{
+      color: gray;
       font-size: 25px;
       
   }
