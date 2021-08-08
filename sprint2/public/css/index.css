@@ -160,6 +160,8 @@
 
 .index {
     background-color:#0083BA;
+    /*height: 0*/
+    height: auto;
 }
 
 
@@ -181,6 +183,7 @@
         padding: 0 20px;
         /*margin: 0*/
         margin: 60px 0 35px;
+       
     }
     
     

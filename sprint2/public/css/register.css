@@ -1,4 +1,4 @@
-body{
+.registro{
     margin: 0;
     background: url(/imgregistro/fondoregistro2.jpg);
      background-size: cover;
@@ -82,7 +82,7 @@ body{
       color: rgb(124, 120, 120);
       text-decoration: underline;
     }
-    label{
+    .registro .label{
         color: gray;
         font-size: 35px;
         
@@ -162,7 +162,7 @@ body{
           color: rgb(124, 120, 120);
           text-decoration: underline;
         }
-        label{
+        .registro .label{
             color: gray;
             font-size: 35px;
             
@@ -197,7 +197,7 @@ body{
       font-size: 10px;
       color:white;
     }
-    label{
+    .registro .label{
       color: gray;
       font-size: 25px;
       
