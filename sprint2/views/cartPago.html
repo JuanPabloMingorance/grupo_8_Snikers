@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/3f21023fe6.js" crossorigin="anonymous"></script>
     <title>CartPago</title>
 </head>
-<body>
+<body class="pago">
     <header>
         <nav class="logo-and-search">
             <div class="img">
@@ -38,12 +38,12 @@
                                                 </div>
 <div><h1>METODO DE PAGO</h1>
 </div>
-<section class="form-pago">
-    <article>
-        <div class="cuotas">
-            <P>Todas las transacciones se realizan de manera segura.</P>
-            <h5>Cantidad de cuotas</h5>
+
+        <div>
+            <P>Todas las transacciones se realizan de manera segura.</P></div>
             <form class="form">
+                <div class="box-form">
+            <h5>Cantidad de cuotas</h5>
             <select name="cuotas" id="cuotas">
                 <option value="" selected hidden>seleccione su opcion</option>
                 <option value="1">X1</option>
@@ -53,42 +53,40 @@
                 <option value="18">X18</option>
             </select>
         </div>
-            <div class="lbl-numero">
+
+            <div class="box-form">
                 <h5>Numero</h5>
 <input type="number" required>
 <label>
 </label>
 </div>
-<div class="lbl-numero">
+
+<div class="box-form">
     <h5>titular de la tarjeta</h5>
     <input type="text" required>
     <label>
 
     </label>
     </div>
-    <div class="lbl-numero">
+
+    <div class="box-form">
         <h5>Fecha de vencimiento</h5>
         <input type="date" required>
         <label>
         </label>
         </div>
-        <div class="lbl-numero">
+
+        <div class="box-form">
             <h5>Codigo de vencimiento</h5>
             <input type="number" required>
             <label>
         
             </label>
             </div>
+        </form>
 
-
-    </article>
-
-
-
-
-</section>
     <div>
-        <button type="submit"><a href="/cartFinal">Finalizar Compra</a></button>
+        <button type="submit"><a href="/cartFinal">FINALIZAR COMPRA</a></button>
         </div>
     <div>
         <p>Al hacer click en FINALIZAR COMPRA acepta los terminos y condiciones.</p>
