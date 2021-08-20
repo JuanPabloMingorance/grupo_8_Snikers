@@ -61,16 +61,16 @@ main.entrega div.correo{
 }
 
 main.entrega div.checkbox {
-display: flex;
-justify-content: flex-start;
-margin-bottom: 10px;
+margin: 15px;
+font-size: 12px;
 }
 
 main.entrega div.checkbox1 {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 30px;
-}
+    margin: 15px;
+    font-size: 12px;
+    }
+
+
 
 main.entrega button{
     width: 100%;
@@ -84,6 +84,10 @@ main.entrega button a{
     text-decoration: none;
     color: white;
     }
+
+ main.entrega article div.box-button{
+        margin-right: 10px;
+        }
 
 main.entrega div.pago img{
     width: 100px;
@@ -102,10 +106,53 @@ margin-left: 30px;
 
 @media (min-width:768px){
     main.entrega h4{
-    margin-top: 50px;
-    font-size: 30px;
+    margin-top: 100px;
+    font-size: 40px;
     }
 
+    main.cart .aviso{
+            background-color:#f76d02;
+            color: white;
+            display: none;
+        }
+
+        main.entrega section.datos{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            font-size: 25px;
+            }
+
+            main.entrega div.correo{
+                font-size: 25px;
+            }
+
+            main.entrega div.checkbox {
+               font-size: 18px;
+               margin-top: 100px;
+                }
+                
+                main.entrega div.checkbox1 {
+                    font-size: 18px;
+                    margin-bottom:  100px;
+                    }
+
+                    main.entrega div.button1{
+                        width: 50%;
+                        margin-bottom: 100px;
+                    }
+
+                    main.entrega article div.box-button{
+                    margin-right: 10px;
+                    }
+
+                    main.entrega div.sub{
+                        font-size: 30px;
+                        margin-bottom: 50px;
+                        }
+
+          
   
 
 

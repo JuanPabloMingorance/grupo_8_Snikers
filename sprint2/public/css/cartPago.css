@@ -25,6 +25,10 @@ main.pago .aviso li{
     opacity: 30%;
 }
 
+body.pago{
+background-color: #ebebeb;
+}
+
 main.pago h1{
     text-align: center;
     margin: 20px;
@@ -36,32 +40,8 @@ main.pago h5{
     
 }
 
-main.pago p{
-margin-bottom: 30px;
-text-align: center;
-}
-
-main.pago section.form-pago div.cuotas{
-    margin-bottom: 20px; 
-    
-}
-
-
-main.pago section.form-pago{
-    display: flex;
-    flex-direction: column;
-   margin: 30px 0;
-}
-
-main.pago section.form-pago div.lbl-numero{
-display: flex;
-flex-direction: column;
-} 
-
-main.pago section.form-pago div.lbl-numero input{
-    padding: 10px;
-    margin: 5px 0;
-    height: 25px;
+main.pago div.box-form{
+    margin: 30px; 
 }
 
 main.pago button{
@@ -79,6 +59,7 @@ main.pago button a{
 main.pago p{
     text-align: center;
     font-size: 12px;
+    margin-bottom: 50px;
 }    
 
 main.pago div.pago img{
@@ -97,8 +78,14 @@ margin-left: 30px;
 }
 
 @media (min-width:768px){
+    main.cart .aviso{
+        background-color:#f76d02;
+        color: white;
+        display: none;
+    }
+
     main.pago h1{
-        margin: 50px;
+        margin-top: 50px;
     }
     
     main.pago h5{
@@ -106,13 +93,29 @@ margin-left: 30px;
         
     }
 
-    main.pago section.form-pago div.cuotas p{
-     font-size: 20px;
-        }
+    main.pago div.box-form{
+        margin: 50px; 
+    }
+
+    main.pago div.box-form input{
+     padding-right: 50px;
+     height: 30px;
+    }
 
         main.pago p{
             text-align: center;
-            font-size: 16px;
+            font-size: 20px;
         } 
+
+        main.pago div h4{
+            margin-top: 100px;
+       
+            }
+
+            
+main.pago button{
+    width: 50%;
+    margin-bottom: 100px;
+}
 
 }
