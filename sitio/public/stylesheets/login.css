@@ -1,0 +1,108 @@
+.login{
+    z-index: -1;
+    background-color: var(--color-gris);
+    font-family: var(--font-family);
+}
+
+.login main{
+    width:100vw;
+    height:100vh;
+}
+
+.login main .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    width: 80%;
+    height: 95%;
+    background-color: var(--color-azul);
+    box-shadow:  0px 0px 15px 3px var(--color-azul);
+    border: transparent 1px solid;
+    border-radius: 15px;
+}
+
+.login main .container .logo{
+    width: 50%;
+    align-self: center;
+}
+
+.login main .container .form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.login main .container .form form{
+    margin-top: 20px;
+}
+
+.login main .container .form h1{
+    display: block;
+    align-self: center;
+    text-transform: uppercase;
+    border-top: solid 3px var(--color-naranja);
+    border-bottom: solid 3px var(--color-naranja);
+}
+
+.login main .container .form form input{
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.login main .container .form form small{
+    color: red;
+    font-size: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.login main .container .form form input:focus{
+    border-color: var(--color-naranja);
+    box-shadow: 0px 1px 1px var(--color-naranja) inset, 0px 0px 8px var(--color-naranja); 
+    outline: 0 none; 
+}
+
+.login main .container .form form button{
+    border: transparent 1px solid;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.login main .container .form form button:active{
+    color: var(--color-azul);
+    background-color: var(--color-naranja);
+
+}
+
+
+@media (min-width: 768px) {
+    .login main .container .logo{
+        display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+
+    .login main .container .form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 30px;
+        align-items: center;
+    }
+    .login main .container .form form input{
+        margin-bottom: 8px;
+    border-radius: 5px;
+    width: 100%;
+    }
+
+    .login main .container .form form input#remember{
+        width: 10%;
+
+    }
+}
