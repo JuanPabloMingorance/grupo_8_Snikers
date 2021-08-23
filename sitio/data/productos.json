@@ -1,0 +1,111 @@
+[{
+    "id": 1,
+    "Nombre": "Lite 2",
+    "Precio": "$7767.62",
+    "Marca": "Jordan",
+    "Descripcion": "Disfrutá cada momento de tu día con estas zapatillas de running Reebok para hombre. Su diseño ultraliviano las hace ideales para usar a lo largo de todo el día. El exterior de malla abierta las hace transpirables. Las franjas laterales bordadas ofrecen estilo y soporte.",
+    "Categoria": "Running",
+    "Imagen": "11.jpg",
+    "Stock": 37
+  }, 
+  {
+    "id": 2,
+    "Nombre": "Energen lite",
+    "Precio": "$28637.36",
+    "Marca": "Jordan",
+    "Descripcion": "Dejá que estas zapatillas livianas de running Reebok para hombre te lleven más lejos, más rápido. El exterior transpirable mantiene tus pies frescos durante tu corrida. Los revestimientos en el talón aportan soporte y durabilidad. La mediasuela amortiguada FuelFoam y el talón biselado ofrecen confort durante todo el día.",
+    "Categoria": "Running",
+    "Imagen": "12.jpg",
+    "Stock": 62
+  },
+   {
+    "id": 3,
+    "Nombre": "Botines Nike Superfly 7",
+    "Precio": "$27026.51",
+    "Marca": "Nike",
+    "Descripcion": "Los botines Nike Superfly 7 Academy nacieron para que te conviertas en el mejor dentro de la cancha. Un diseño exclusivo, audaz y cómodo te permitirán sentir el control y la precisión que necesitas, además de contar con un calzado liviano para cambiar tu ritmo de juego cuando lo necesites.",
+    "Categoria": "Futbol",
+    "Imagen": "6.jpg",
+    "Stock": 32
+  }, {
+    "id": 4,
+    "Nombre": "Botines Nike Legend 8",
+    "Precio": "$21641.91",
+    "Marca": "Nike",
+    "Descripcion": "Los botines Nike Legend 8 Academy TF fueron pensados para jugadores elegantes y clásicos dentro del terreno de juego. Confeccionados en cuero para una mayor durabilidad, sentirás que partido a partido se amoldan a tus pies para una mejor performance. Cuenta con un texturizado que te ayuda a tener un mejor control de la pelota además de no dejar ceder demasiado al cuero. Hechos para terrenos artificiales o superficies sintéticas.",
+    "Categoria": "Futbol",
+    "Imagen": "17.jpg",
+    "Stock": 68
+  }, {
+    "id": 5,
+    "Nombre": " Grand Court Base",
+    "Precio": "$25283.21",
+    "Marca": "Adiddas",
+    "Descripcion": "Las zapatillas adidas Grand Court Base están inspiradas en aquellos partidos gloriosos de tenis de décadas pasadas como los años 70. Su diseño presenta un exterior de cuero texturizado con revestimientos de gamuza suave. Están compuestas con la plantilla Cloudfoam Comfort y forro interno textil para una sensación de amortiguación similar a pisar el verde césped de Wimbledon.",
+    "Categoria": "Classic",
+    "Imagen": "2.jpg",
+    "Stock": 100
+  }, {
+    "id": 6,
+    "Nombre": "Advantage",
+    "Precio": "$12633.37",
+    "Marca": "adiddas",
+    "Descripcion": "Inspiradas en las canchas de polvo de ladrillo, nacieron las Zapatillas adidas Advantage K infantil. Son cómodas, urbanas y versátiles para mixear con todos los looks. De cuero sintético y suela de goma, lucen 3 rayas perforadas que revelan la influencia del tenis clásico. Cuentan con plantilla acolchada para sumar comodidad a cada pisada.",
+    "Categoria": "Classic",
+    "Imagen": "1.jpg",
+    "Stock": 12
+  }, {
+    "id": 7,
+    "Nombre": "Revolution 5",
+    "Precio": "$22060.02",
+    "Marca": "Nike",
+    "Descripcion": "Para vos que sos un runner exigente y sabés llevar lo mejor para rendir al 100%, las zapatillas Nike Revolution 5 son ideales porque amortiguan tu zancada con espuma suave para que sigas corriendo con comodidad. El material de punto ligero envuelve tu pie en un soporte transpirable, mientras que un diseño minimalista se adapta a casi cualquier lugar.",
+    "Categoria": "Running",
+    "Imagen": "4.jpg",
+    "Stock": 5
+  }, {
+    "id": 8,
+    "Nombre": "Renew Ride 2",
+    "Precio": "$8023.72",
+    "Marca": "Nike",
+    "Descripcion": "Superá tus metas con las Zapatillas Nike Renew Ride 2, creadas para correr. Son cómodas durante toda tu carrera, además de ser un calzado ligero con un diseño adaptado al tobillo. Confeccionadas con tejido de hilo suave, muy ligero y resistente que otorga ventilación para mantener los pies frescos. Tienen media suela de espuma EVA que amortigua y suaviza la pisada e incluyen elementos reflectantes.",
+    "Categoria": "Running",
+    "Imagen": "5.jpg",
+    "Stock": 58
+  }, {
+    "id": 9,
+    "Nombre": "Predator",
+    "Precio": "$13749.72",
+    "Marca": "Adiddas",
+    "Descripcion": "El instinto ganador es innato, por eso presentamos los Botines Adidas Predator, ideales para los chicos que aman el deporte y avanzan hasta la victoria siempre. Presentan un exterior sintético suave con relieve para un mayor control que garantiza un ajuste perfecto tipo media. El empeine con relieve se adhiere a la pelota y maximiza la precisión del juego en cada jugada. Cuentan con ajuste ceñido, diseño anatómico y son perfectos para canchas de césped artificial.",
+    "Categoria": "Futbol",
+    "Imagen": "3.jpg",
+    "Stock": 46
+  }, {
+    "id": 10,
+    "Nombre": " Copa Sense.4 TF",
+    "Precio": "$11694.23",
+    "Marca": "Adiddas",
+    "Descripcion": "Los botines Adidas Copa Sense.4 TF están confeccionados en cuero sintético y con un diseño anatómico para un calce perfecto. El antepié de piel suave y resistente brinda una comodidad instantánea para esos momentos difíciles donde se requiere de una habilidad extra. Hechos para césped sintético.",
+    "Categoria": "Futbol",
+    "Imagen": "9.jpg",
+    "Stock": 94
+  }, {
+    "id": 11,
+    "Nombre": "Royal Complete Clean 2.0",
+    "Precio": "$19934.97",
+    "Marca": "Yeezy Originals",
+    "Descripcion": "El estilo impecable de las canchas de tenis. Este calzado retro luce unos colores neutros que le confieren un look minimalista. Los colores en contraste hacen destacar los logos y el talón, acentuando su estilo deportivo. Las costuras le aportan un toque impecable y elegante. El exterior está hecho de cuero sintético suave.",
+    "Categoria": "Classic",
+    "Imagen": "15.jpg",
+    "Stock": 99
+  }, {
+    "id": 12,
+    "Nombre": "Royal Glide",
+    "Precio": "$24442.64",
+    "Marca": "Yeezy Originals",
+    "Descripcion": "Parte de la colección Royal Classic, la Reebok Royal Glide es una silueta clásica de corte bajo que te ofrece un ajuste personalizado. Viene en una amplia variedad de combinaciones de colores y suelas que añaden un extra de estilo a tus looks casuales.",
+    "Categoria": "Classic",
+    "Imagen": "18.jpg",
+    "Stock": 62
+  }]
