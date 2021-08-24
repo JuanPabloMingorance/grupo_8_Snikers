@@ -9,24 +9,7 @@
     <title>cart</title>
 </head>
 <body> 
-    <header>
-        <nav class="logo-and-search">
-            <div class="img">
-               <a href="/"> <img src="/images/SNIKERS.png" alt=""></a>
-            </div>
-            <label for="navmenu"><div class="icon-burger"><i class="fas fa-bars"></i></div></label>
-            <div class="search-bar"><input type="text" name="" id="" placeholder="Search"><i class="fas fa-search"></i></div>
-        </nav>
-        <input type="checkbox" id="navmenu">
-        <nav class="menu">
-            <ul>
-                <li><a href="/">Home<i class="fas fa-home"></i></i></a></li>
-                <li><a href="/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="/register">Registro<i class="fas fa-user-plus"></i></a></li>
-                <li><a href="/cart">Carrito<i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+    <% include ('./partials/header.ejs')%> 
     <main class="cart">
         <div class="aviso">
             <ul>
@@ -69,18 +52,6 @@
 </div>
 <div>
 </main>
-<footer>
-    <div class="redes">
-    <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
-    <a href="" class="facebook"><i class="fab fa-facebook-square"></i></a>
-    <a href="" class="instagram"><i class="fab fa-instagram"></i></a>
-       </div>
-       <div class="texto">
-    <p>Argentina <br> </p>
-       <p>Todos los Derechos Reservados</p>
-       <p>Politica de Privacidad</p>
-   </div>
-</footer>
-
+<% include ('./partials/footer.ejs') %> 
 </body>
 </html>
