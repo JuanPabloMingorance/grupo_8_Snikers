@@ -14,7 +14,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 60px auto;
-    width: 80%;
+    width: 420px;
     height: 95%;
     background-color: var(--color-azul);
     box-shadow:  0px 0px 15px 3px var(--color-azul);
