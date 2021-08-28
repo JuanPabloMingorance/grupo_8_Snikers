@@ -31,5 +31,29 @@ module.exports = {
         return res.render('admin/admin',{
             productos
         })
-    }
+    },
+
+   cart: (req, res) => {
+      return res.render("cart", {
+        productos
+      });
+  },
+
+   cartEntrega: (req, res) => {
+    return res.render("cartEntrega", {
+      productos
+    });
+  },
+
+   cartPago: (req, res) => {
+      return res.render("cartPago", {
+        productos
+      });
+    },
+
+   cartFinal: (req, res) => {
+        return res.render("cartFinal", {
+          productos
+        });
+      }
 };
