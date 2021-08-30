@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <title>Snikers-Producto</title>
+    <title><%= producto.Nombre %> </title>
 </head>
 <body class="producto">
-    <% include ('./partials/header.ejs')%> 
+    <% include partials/header%> 
     <main>
         <div class="container">
         <h1>Detalle de Producto</h1>
             <div class="imagen-producto">
                 <div class="imagenes">
                     <div class="img-principal">
-                        <img src="/images/zapatilla1.webp" alt="">             
+                        <img src="/images/img-detailProduct/zapatilla1.webp" alt="">             
                     </div>
                     <div class="imagenes-sec">
                         <div class="imagen-small">
-                            <img src="/images/zapatilla2.JPG " alt="">
+                            <img src="/images/img-detailProduct/zapatilla2.JPG " alt="">
                         </div>
                         <div class="imagen-small">
-                            <img src="/images/zapatilla3.webp" alt="">
+                            <img src="/images/img-detailProduct/zapatilla3.webp" alt="">
 
                         </div>
                         <div class="imagen-small">
-                            <img src="/images/zapatilla4.jpg" alt="">
+                            <img src="/images/img-detailProduct/zapatilla4.jpg" alt="">
 
                         </div>
                     </div>
                 </div>
                 <div class="descripcion">
                     <div class="principal">
-                        <h3>(Nombre del Producto)</h3>
+                        <h3><%= producto.Nombre %> </h3>
                     <div class="texto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium culpa repudiandae reiciendis distinctio similique dolore! Consequuntur accusamus vitae deserunt facere provident fuga quae, expedita itaque natus quaerat nisi dolorum ea praesentium odit voluptatum hic mollitia illum. Id, molestias. Rem, quis.
+                        <%= producto.Descripcion %> 
                     </div>
                     <div class="icons">
                         <div class="icono"><i class="fas fa-cart-plus"></i></div>
@@ -94,6 +94,6 @@
             </div>
         </div>
     </main>
-   <% include ('./partials/footer.ejs') %> 
+   <% include partials/footer %> 
 </body>
 </html>
