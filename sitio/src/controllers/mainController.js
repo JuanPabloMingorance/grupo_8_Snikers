@@ -28,7 +28,7 @@ module.exports = {
   },
 
    admin : (req,res) => {
-        return res.render('admin/admin',{
+        return res.render('admin',{
             productos
         })
     },
