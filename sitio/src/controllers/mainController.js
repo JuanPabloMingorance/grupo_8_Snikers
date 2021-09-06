@@ -28,7 +28,8 @@ module.exports = {
   },
 
    admin : (req,res) => {
-        return res.render('admin',{
+        return res.render('admin/admin',{
+            title: "Administrador",
             productos
         })
     },
