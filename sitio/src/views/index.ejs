@@ -26,186 +26,48 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/1.jpg" alt="zapatillas mujer">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>Zapatillas Mujer Runfalcon 2.0</h4>
-                                                    <p>  30% off</p>
-                                                </div>
-                                                <div class="caja2">
+                                        <% for( let i = 0; i < 3; i++ ) { %>
+                                            <article>
+                                                <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> " alt="zapatillas mujer">
+                                                <div class="datos">
+                                                    <div class="caja1">
+                                                        <h4><%= ofertas[i].Nombre %></h4>
+                                                        <p><%= ofertas[i].Precio %></p>
+                                                    </div>
+                                                    <div class="caja2">
+                                                        
+                                                        <div class="heart"><i class="far fa-heart"></i></div>
+                                                    </div>
                                                     
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
                                                 </div>
-                                                
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/2.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>20% off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/3.jpg"
-                                                alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS DOWNSHIFTER 10 NIKE</h4>
-                                                    <p>30 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                                
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/4.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>15 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                                
-                                            </div>
-                                        </article>
+                                            </article>
+                                        <% } %>
+                
                                     </section>
                                 </div>
                                 <div class="carousel-item">
                                     <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/5.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO 6 NIKE</h4>
-                                                    <p>45 % off</p>
-                                                </div>
-                                                <div class="caja2">
+                                        <% for( let i = 3; i < 6; i++ ) { %>
+                                            <article>
+                                                <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> " alt="zapatillas hombre">
+                                                <div class="datos">
+                                                    <div class="caja1">
+                                                        <h4><%= ofertas[i].Nombre %></h4>
+                                                        <p><%= ofertas[i].Precio %></p>
+                                                    </div>
+                                                    <div class="caja2">
+                                                        
+                                                        <div class="heart"><i class="far fa-heart"></i></div>
+                                                    </div>
                                                     
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
                                                 </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/6.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO  NIKE</h4>
-                                                    <p>30 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/7.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO</h4>
-                                                    <p>10 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                             
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/8.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO </h4>
-                                                    <p>5 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
+                                            </article>
+                                        <% } %>
                                     </section>
-                                </div>
-                                <div class="carousel-item">
-                                    <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/9.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>45 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/10.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION </h4>
-                                                    <p>30 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/11.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION </h4>
-                                                    <p>10 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/12.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 </h4>
-                                                    <p>30 % off</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                    </section>
+
                                 </div>
                             </div>
+
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -232,186 +94,47 @@
                              <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/1.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>Zapatillas Mujer Runfalcon 2.0</h4>
-                                                    <p>$21.000</p>
+                                        <% for( let i = 0; i < 3; i++ ) { %>
+                                            <article>
+                                                <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> " alt="">
+                                                <div class="datos">
+                                                    <div class="caja1">
+                                                        <h4><%= destacados[i].Nombre %> </h4>
+                                                        <p><%= destacados[i].Precio %> </p>
+                                                    </div>
+                                                    <div class="caja2">
+                                                        
+                                                        <div class="heart"><i class="far fa-heart"></i></div>
+                                                    </div>
+                                                   
                                                 </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/2.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>$23.800</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/3.jpg"
-                                                alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS DOWNSHIFTER 10 NIKE</h4>
-                                                    <p>$18.200</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/4.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>$19.900</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                                
-                                            </div>
-                                        </article>
+                                            </article>
+                                        <% } %>
+                                 
                                     </section>
                                 </div>
                                 <div class="carousel-item">
                                     <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/5.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO 6 NIKE</h4>
-                                                    <p>$18.400</p>
+                                        <% for( let i = 3; i < 6; i++ ) { %>
+                                            <article>
+                                                <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> " alt="">
+                                                <div class="datos">
+                                                    <div class="caja1">
+                                                        <h4><%= destacados[i].Nombre %> </h4>
+                                                        <p><%= destacados[i].Precio %> </p>
+                                                    </div>
+                                                    <div class="caja2">
+                                                        
+                                                        <div class="heart"><i class="far fa-heart"></i></div>
+                                                    </div>
+                                                   
                                                 </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/6.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO  NIKE</h4>
-                                                    <p>$14.700</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/7.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO</h4>
-                                                    <p>$17.500</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                              
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/8.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS ZOOM WINFLO </h4>
-                                                    <p>$11.300</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                    </section>
-                                </div>
-                                <div class="carousel-item">
-                                    <section class="articulos">
-                                        <article>
-                                            <img src="/images/img_index/los mas vendidos/9.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 NIKE</h4>
-                                                    <p>$15.900</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art2">
-                                            <img src="/images/img_index/los mas vendidos/10.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION </h4>
-                                                    <p>$18.800</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                               
-                                            </div>
-                                        </article>
-                                        <article class="art3">
-                                            <img src="/images/img_index/los mas vendidos/11.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION </h4>
-                                                    <p>$11.500</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                                
-                                            </div>
-                                        </article>
-                                        <article class="art4">
-                                            <img src="/images/img_index/los mas vendidos/12.jpg" alt="">
-                                            <div class="datos">
-                                                <div class="caja1">
-                                                    <h4>ZAPATILLAS REVOLUTION 5 </h4>
-                                                    <p>$22.800</p>
-                                                </div>
-                                                <div class="caja2">
-                                                    
-                                                    <div class="heart"><i class="far fa-heart"></i></div>
-                                                </div>
-                                              
-                                            </div>
-                                        </article>
+                                            </article>
+                                        <% } %>
                                     </section>
                                 </div>
                             </div>
+                            
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -425,7 +148,7 @@
                         </div>
                      </div>
                  </section>
-
+                 </div>
 
                  <div class="carrusel-final">
                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
