@@ -10,7 +10,7 @@ router.get('/detail/:id',detail);
 router.get('/edit/:id',edit);
 router.put('/edit/:id',update);
 
-router.delete('/delete',destroy);
+router.delete('/delete/:id',destroy);
 
 
 

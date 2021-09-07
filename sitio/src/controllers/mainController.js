@@ -30,7 +30,7 @@ module.exports = {
    admin : (req,res) => {
         return res.render('admin/admin',{
             title: "Administrador",
-            productos
+            productos :  JSON.parse(fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8"))
         })
     },
 
