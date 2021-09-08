@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "Nombre": "Lite 2",
     "Precio": "$7767.62",
@@ -7,8 +8,8 @@
     "Categoria": "Running",
     "Imagen": "11.jpg",
     "Stock": 37,
-    "Seccion" : "oferta"
-  }, 
+    "Seccion": "oferta"
+  },
   {
     "id": 2,
     "Nombre": "Energen lite",
@@ -18,9 +19,9 @@
     "Categoria": "Running",
     "Imagen": "12.jpg",
     "Stock": 62,
-    "Seccion" : "destacado"
+    "Seccion": "destacado"
   },
-   {
+  {
     "id": 3,
     "Nombre": "Botines Nike Superfly 7",
     "Precio": "$27026.51",
@@ -29,8 +30,9 @@
     "Categoria": "Futbol",
     "Imagen": "6.jpg",
     "Stock": 32,
-    "Seccion" : "destacado"
-  }, {
+    "Seccion": "destacado"
+  },
+  {
     "id": 4,
     "Nombre": "Botines Nike Legend 8",
     "Precio": "$21641.91",
@@ -39,8 +41,9 @@
     "Categoria": "Futbol",
     "Imagen": "17.jpg",
     "Stock": 68,
-    "Seccion" : "oferta"
-  }, {
+    "Seccion": "oferta"
+  },
+  {
     "id": 5,
     "Nombre": " Grand Court Base",
     "Precio": "$25283.21",
@@ -49,8 +52,9 @@
     "Categoria": "Classic",
     "Imagen": "2.jpg",
     "Stock": 100,
-    "Seccion" : "destacado"
-  }, {
+    "Seccion": "destacado"
+  },
+  {
     "id": 6,
     "Nombre": "Advantage",
     "Precio": "$12633.37",
@@ -59,8 +63,9 @@
     "Categoria": "Classic",
     "Imagen": "1.jpg",
     "Stock": 12,
-    "Seccion" : "oferta"
-  }, {
+    "Seccion": "oferta"
+  },
+  {
     "id": 7,
     "Nombre": "Revolution 5",
     "Precio": "$22060.02",
@@ -68,9 +73,10 @@
     "Descripcion": "Para vos que sos un runner exigente y sabés llevar lo mejor para rendir al 100%, las zapatillas Nike Revolution 5 son ideales porque amortiguan tu zancada con espuma suave para que sigas corriendo con comodidad. El material de punto ligero envuelve tu pie en un soporte transpirable, mientras que un diseño minimalista se adapta a casi cualquier lugar.",
     "Categoria": "Running",
     "Imagen": "4.jpg",
-    "Stock": 5
-,
-"Seccion" : "oferta"  }, {
+    "Stock": 5,
+    "Seccion": "oferta"
+  },
+  {
     "id": 8,
     "Nombre": "Renew Ride 2",
     "Precio": "$8023.72",
@@ -79,8 +85,9 @@
     "Categoria": "Running",
     "Imagen": "5.jpg",
     "Stock": 58,
-    "Seccion" : "oferta"
-  }, {
+    "Seccion": "oferta"
+  },
+  {
     "id": 9,
     "Nombre": "Predator",
     "Precio": "$13749.72",
@@ -89,8 +96,9 @@
     "Categoria": "Futbol",
     "Imagen": "3.jpg",
     "Stock": 46,
-    "Seccion" : "destacado"
-  }, {
+    "Seccion": "destacado"
+  },
+  {
     "id": 10,
     "Nombre": " Copa Sense.4 TF",
     "Precio": "$11694.23",
@@ -99,8 +107,9 @@
     "Categoria": "Futbol",
     "Imagen": "9.jpg",
     "Stock": 94,
-    "Seccion" : "oferta"
-  }, {
+    "Seccion": "oferta"
+  },
+  {
     "id": 11,
     "Nombre": "Royal Complete Clean 2.0",
     "Precio": "$19934.97",
@@ -109,8 +118,9 @@
     "Categoria": "Classic",
     "Imagen": "15.jpg",
     "Stock": 99,
-    "Seccion" : "destacado"
-  }, {
+    "Seccion": "destacado"
+  },
+  {
     "id": 12,
     "Nombre": "Royal Glide",
     "Precio": "$24442.64",
@@ -119,5 +129,6 @@
     "Categoria": "Classic",
     "Imagen": "18.jpg",
     "Stock": 62,
-    "Seccion" : "destacado"
-  }]
+    "Seccion": "destacado"
+  }
+]
