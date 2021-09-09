@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "nombre": "Brian",
+    "apellido": "Lopez",
+    "correo": "brian@gmail.com",
+    "password": "$2a$10$qVoLnPMW4rXs5MPggD4COO7EJha8vn66XEc.0ndNaJC8TEYVKq4Ie"
+  },
+  {
+    "id": 2,
+    "nombre": "Juan",
+    "apellido": "Mingorance",
+    "correo": "juan@gmail.com",
+    "password": "$2a$10$Zt/6VjnITHtjGuBXAJzBXeL3Ojlsdc1VPnYrQjuk6E5XJYZGFpP4W"
+  },
+  {
+    "id": 3,
+    "nombre": "Ludmila",
+    "apellido": "Morelli",
+    "correo": "ludmila@gmail.com",
+    "password": "$2a$10$diiBzfMI1nBwXjLUU7rRbOWPWWYke4mBQLrM5pPc3d/AZuNhUNEKi"
+  },
+  {
+    "id": 4,
+    "nombre": "Moises",
+    "apellido": "Condori",
+    "correo": "moises@gmail.com",
+    "password": "$2a$10$VI6MtSKwSW0F.k65lnhisexWuYHOhUSNhL9lWzdG8CwOP.cRnes82"
+  }
+]
