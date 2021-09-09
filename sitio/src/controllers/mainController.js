@@ -6,9 +6,13 @@ let productos = JSON.parse(
 
 module.exports = {
   index: (req, res) => {
-    return res.render("index", {
+    let ofertas = productos.filter(producto => producto.Seccion === 'oferta');
+    let destacados = productos.filter(producto => producto.Seccion === 'destacado');
+
+  return res.render("index", {
       title: "Snikers",
-      productos,
+      ofertas,
+      destacados,
     });
   },
 
