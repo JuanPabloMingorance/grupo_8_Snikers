@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head',{title: "register"}) %> 
+
+<body class="registro">
+    <% include partials/header %> 
+    <section class="form-register">
+        <img id="codigob"src="/imgregistro/barra1.png">
+        <h4> REGISTRO</h4>
+        <form action="registro.html" metod="POST">
+        <label class=registro1 for="name">Nombre</label><input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+        <label class=registro1 for="apellidos">Apellido</label><input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+        <label class=registro1 for="correo">Email</label> <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+        <label class=registro1 for="password">Password</label><input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
+
+        <input type="checkbox" name="terminos" id="terminos"> <a href="#">Terminos y Condiciones</a>
+        <input class="botons" type="submit" value="REGISTRATE">
+        <p><a href="#">¿Ya tengo Cuenta?</a></p>
+    </form>
+      </section>
+     
+      <% include partials/footer %> 
+
+</body>
+</html>
