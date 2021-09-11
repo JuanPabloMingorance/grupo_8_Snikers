@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('./partials/head',{title: "Registro"}) %> 
+<html lang="es">
+    <%- include('./partials/head',{title: "register"}) %> 
+
 <body class="registro">
     <% include partials/header %> 
     <section class="form-register">
@@ -10,25 +11,15 @@
         <label class=registro1 for="name">Nombre</label><input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre">
         <label class=registro1 for="apellidos">Apellido</label><input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido">
         <label class=registro1 for="correo">Email</label> <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-        <label class=registro1 for="password">Password</label><input class="controls" type="password" name="password" id="pass" placeholder="Ingrese su Contraseña">
-        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+        <label class=registro1 for="password">Password</label><input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
+
+        <input type="checkbox" name="terminos" id="terminos"> <a href="#">Terminos y Condiciones</a>
         <input class="botons" type="submit" value="REGISTRATE">
         <p><a href="#">¿Ya tengo Cuenta?</a></p>
     </form>
       </section>
-      <footer>
-        <div class="redes">
-        <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
-        <a href="" class="facebook"><i class="fab fa-facebook-square"></i></a>
-        <a href="" class="instagram"><i class="fab fa-instagram"></i></a>
-           </div>
-           <div class="texto">
-        <p>argentina <br> </p>
-           <p>Todos los Derechos Reservados</p>
-           <p>Politica de Privacidad</p>
-       </div>
-    </footer>
-
+     
+      <% include partials/footer %> 
 
 </body>
 </html>
