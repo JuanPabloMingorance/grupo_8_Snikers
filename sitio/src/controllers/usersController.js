@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs')
+const { validationResult } = require('express-validator');
 let productos = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8")
   );
@@ -37,15 +38,17 @@ module.exports = {
         });
     },
 
-    processLogin: (req,res) => {
-        const{correo,password}=req.body;
-        let usuario = usuario.find(usuario=> usuario.correo === correo)
+    processLogin : (req,res) => {
+        let errors = validationResult(req);
+        return res.send(errors)
+            const {correo,password} = req.body;
+            let usuario = usuarios.find(usuario => usuario.correo === correo);
     },
+
     profile: (req,res) => {
         return res.render('profile',{
             title : 'perfil de usuarios',
             productos
         })
     }
-
 };
