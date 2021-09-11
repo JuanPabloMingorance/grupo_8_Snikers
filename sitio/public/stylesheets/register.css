@@ -1,6 +1,6 @@
 .registro{
     margin: 0;
-    background: url(/imgregistro/fondoregistro2.jpg);
+    background: url(/images/fondoregistro2.jpg);
      background-size: cover;
      background-attachment: fixed;
   }
@@ -13,7 +13,7 @@
   }
   .registro{
     margin: 0;
-    background: url(/imgregistro/fondoregistro2.jpg);
+    background: url(/images/fondoregistro2.jpg);
      background-size: cover;
      background-attachment: fixed;
     display: flex;
