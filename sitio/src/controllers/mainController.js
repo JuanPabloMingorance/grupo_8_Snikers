@@ -6,9 +6,13 @@ let productos = JSON.parse(
 
 module.exports = {
   index: (req, res) => {
-    return res.render("index", {
+    let ofertas = productos.filter(producto => producto.Seccion === 'oferta');
+    let destacados = productos.filter(producto => producto.Seccion === 'destacado');
+
+  return res.render("index", {
       title: "Snikers",
-      productos,
+      ofertas,
+      destacados,
     });
   },
 
@@ -30,7 +34,7 @@ module.exports = {
    admin : (req,res) => {
         return res.render('admin/admin',{
             title: "Administrador",
-            productos
+            productos :  JSON.parse(fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8"))
         })
     },
 

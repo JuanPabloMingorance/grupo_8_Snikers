@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <title><%- title %> </title>
-</head>
+<%- include('./partials/head') %> 
 <body>
-    <% include partials/header %>
-    <main>
-        <div class="admin">
-            <h1>Admin</h1>
+   <%- include('./partials/header')%> 
+    <main class="container mt-5">
+        <div class=" row admin">
+            <h2 class="my-3">Productos</h2>
+            <div class="col-12 col-md-8 col-lg-10 mx-auto table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Seccion</th>
+                        <th scope="col">Stock</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% productos.forEach((producto, index) => { %>
+                            <tr>
+                                <th scope="row"><%= index + 1 %></th>
+                                <td><%= producto.Nombre %></td>
+                                <td><%= producto.Precio %></td>
+                                <td><%= producto.Marca %></td>
+                                <td><%= producto.Categoria %></td>
+                                <td><%= producto.Seccion %></td>
+                                <td><%= producto.Stock%></td>
+                                <td class="d-flex justify-content-around">
+                                    <div>
+                                        <a class="btn btn-sm btn-success" href="/products/edit/<%= producto.id %>"><i class="fas fa-pencil-alt"></i></a>   
+                                    </div>
+                                    <div>
+                                        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                  </table>
+            </div>
+            
         </div>
     </main>
     <% include partials/footer %> 
+    <%- include('./partials/scripts') %> 
 </body>
 </html>

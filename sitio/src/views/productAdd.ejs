@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head',{title: "Admin"}) %> 
-<body>
-    <% include partials/header %> 
+  <%- include('./partials/head',{title: "Admin"}) %>
+  <body>
+    <% include partials/header %>
     <main class="admin">
-        <h1>CARGA DE PRODUCTO</h1>
-   <form action="">
-    <div class="box-form">
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="form-control">
+      <h1>CARGA DE PRODUCTO</h1>
+      <form action="" method="POST" enctype="multipart/form-data">
+        <div class="box-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" />
+        </div>
+        <div class="box-form">
+          <label for="marca">Marca</label>
+          <input type="text" name="marca" id="nombre" class="form-control" />
+        </div>
+        <div class="box-form">
+          <label for="descripcion">Descripcion</label>
+          <textarea
+            name="descripcion"
+            id=""
+            cols="30"
+            rows="3"
+            class="form-control"
+          ></textarea>
+          <span class="text-danger small"></span>
+        </div>
+        <div class="box-form">
+          <label for="precio">Precio</label>
+          <input type="number" name="precio" id="precio" class="form-control" />
+          <span class="text-danger small"></span>
+        </div>
+        <div class="box-form">
+            <label for="stock">Stock</label>
+            <input type="number" name="stock" id="stock" class="form-control" />
+            <span class="text-danger small"></span>
+          </div>
+          <div class="box-form">
+            <h4>Categoría</h4>
+            <select name="categoria" id="categoria" class="form-select">
+              <option value="" selected hidden>Seleccione la categoría</option>
+              <option value="<%= categorias[0]%>">Running</option>
+              <option value="<%= categorias[1]%>">Futbol</option>
+              <option value="<%= categorias[2]%>">Classic</option>
+            </select>
+            <span class="text-danger small"></span>
+          </div>
+          <div class="box-form">
+            <label for="seccion">Seccion</label>
+            <select name="seccion" id="categoria" class="form-select">
+              <option value="" selected hidden>Seleccione la Seccion</option>
+              <option value="oferta">Oferta</option>
+              <option value="destacado">Destacado</option>
+            </select>
+            <span class="text-danger small"></span>
+          </div>
+        <div class="box-form">
+          <label for="imagen" class="btn btn-primary">Subir imagen</label>
+          <input
+            type="file"
+            name="imagen"
+            id="imagen"
+            hidden
+            accept="image/*"
+          />
+        </div>
         
-    </div>
-    <div class="box-form">
-        <label for="nombre">Descripcion</label>
-        <textarea name="descripcion" id="" cols="30" rows="3" class="form-control"></textarea>
-        <span class="text-danger small"></span>
 
-    </div>
-    <div class="box-form">
-        <label for="precio">Precio</label>
-        <input type="number" name="precio" id="precio" class="form-control" >
-        <span class="text-danger small"></span>
-
-    </div>
-    <div class="box-form">
-        <label for="imagen" class="btn btn-primary">Subir imagen</label>
-        <input type="file" name="imagen" id="imagen" hidden accept="image/*">
-    </div>
-    <div class="box-form">
-        <h4>Categoría</h4>
-        <select name="categoria" id="categoria" class="form-select">
-            <option value="" selected hidden>Seleccione la categoría</option>
-             
-        </select>
-        <span class="text-danger small"></span>
-
-    </div>
-
-
-
-
-    <div class="box-button">
-        <button type="submit">Agregar</button>
-    </div>
-   </form>
-
-
+        <div class="box-button">
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
     </main>
-    <% include partials/footer %> 
-</body>
+    <% include partials/footer %>
+  </body>
 </html>
