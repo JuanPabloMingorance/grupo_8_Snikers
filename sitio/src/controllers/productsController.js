@@ -32,9 +32,11 @@ module.exports = {
         
     detail: (req,res) => {
         let producto = productos.find(producto => producto.id === +req.params.id)
+        let similares = productos.filter(similar => similar.Categoria === producto.Categoria);
         return res.render('productDetail', {
             productos,
-            producto
+            producto,
+            similares
         })
     },
 

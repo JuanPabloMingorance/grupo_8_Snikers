@@ -5,7 +5,6 @@
     <% include partials/header%> 
     <main>
         <div class="container">
-        <h1>Detalle de Producto</h1>
             <div class="imagen-producto">
                 <div class="imagenes">
                     <div class="img-principal">
@@ -39,51 +38,20 @@
             </div>
             <div class="others">
                 <h2>Productos Similares</h2>
-                <div class="muestras">
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
+                    <div class="muestras">
+                        <% similares.forEach( similar => { %>
+                        <div class="muestra">
+                           
+                            <div class="img"><img src="/images/img-detailProduct/zapatilla1.webp" alt=""></div>
+                            <div class="descr">
+                                <h4><%= similar.Nombre %> </h4>
+                                <div class="text"><%= similar.Descripcion %> </div>
+                            </div>
                         </div>
+                        <% }) %>
                     </div>
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
-                        </div>
                     </div>
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
-                        </div>
-                    </div>
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
-                        </div>
-                    </div>
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
-                        </div>
-                    </div>
-                    <div class="muestra">
-                        <div class="img"><img src="/images/zapatilla1.webp" alt=""></div>
-                        <div class="descr">
-                            <h4>(Nombre de Producto)</h4>
-                            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt odio voluptatem rerum eligendi facere fuga saepe animi?</div>
-                        </div>
-                    </div>
-                </div>
-                </div>
+               
             </div>
         </div>
     </main>
