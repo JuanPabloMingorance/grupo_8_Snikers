@@ -13,14 +13,17 @@ module.exports = [
 
 
     check('precio')
-    .notEmpty().withMessage('Debes indicar el precio')
+    .notEmpty().withMessage('Debes indicar el precio').bail()
     .isInt().withMessage('Debe ser un número'),
 
     check('stock')
-    .notEmpty().withMessage('Debes indicar el stock')
+    .notEmpty().withMessage('Debes indicar el stock').bail()
     .isInt().withMessage('Debe ser un número'),
 
 
+    check('categoria')
+    .notEmpty().withMessage('Debes indicar la categoria').bail()
+    .isInt().withMessage('debes indicar categoria'),
 
     check('seccion')
     .notEmpty()
