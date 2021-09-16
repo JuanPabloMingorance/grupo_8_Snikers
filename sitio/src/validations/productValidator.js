@@ -22,8 +22,8 @@ module.exports = [
 
 
     check('categoria')
-    .notEmpty().withMessage('Debes indicar la categoria').bail()
-    .isInt().withMessage('debes indicar categoria'),
+    .notEmpty().withMessage('Debes indicar la categoria'),
+  
 
     check('seccion')
     .notEmpty()
