@@ -67,9 +67,11 @@ main.cart section article.tres{
 justify-content: space-between;
     }
 main.cart button{
-    width: 100%;
+   display: flex;
+   justify-content: space-around;
     background-color: black;
     padding: 20px;
+    margin: 20px;
 }
 
 
@@ -126,7 +128,6 @@ main.cart div h5{
 }
 
 main.cart h4{
-    font-size: 30px;
     margin-top: 50px;
 }
 
@@ -136,16 +137,14 @@ margin-top: 100px;
 }
 
 main.cart button{
-    margin-top: 100px;
-    width: 50%;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: flex-start;
+display: block;  
+width: auto; 
+margin: 50px;
 }
 
 main.cart button a{
  font-size: 12px;
- padding-left:100px;
+ 
     }
 
 }

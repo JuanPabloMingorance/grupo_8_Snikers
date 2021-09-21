@@ -25,8 +25,13 @@ main.pago .aviso li{
     opacity: 30%;
 }
 
-body.pago{
-background-color: #ebebeb;
+
+
+main.pago div.caja1{
+    background-color:#ebebeb ;
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
 }
 
 main.pago h1{
@@ -45,10 +50,10 @@ main.pago div.box-form{
 }
 
 main.pago button{
-    width: 100%;
+    
     background-color:black ;
     padding: 20px;
-    margin-bottom: 50px;
+    margin: 20px;
 }
 
 main.pago button a{
@@ -97,14 +102,9 @@ main.pago div.cajaFinal h5{
         margin-top: 50px;
     }
     
-    main.pago h5{
-      font-size: 20px;
-        
-    }
 
-    main.pago div.box-form{
-        margin: 50px; 
-    }
+
+
 
     main.pago div.box-form input{
      padding-right: 50px;
@@ -112,8 +112,8 @@ main.pago div.cajaFinal h5{
     }
 
         main.pago p{
-            text-align: center;
-            font-size: 20px;
+           
+            margin-top: 30px;
         } 
 
         main.pago div h4{
@@ -122,9 +122,10 @@ main.pago div.cajaFinal h5{
             }
 
             
-main.pago button{
-    width: 50%;
-    margin-bottom: 100px;
-}
+            main.entrega button{
+                display: block;  
+                 
+                margin: 50px;
+            }
 
 }

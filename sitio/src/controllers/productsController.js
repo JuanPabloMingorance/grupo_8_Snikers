@@ -1,12 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 const productos = JSON.parse(fs.readFileSync(path.join(__dirname,'../data/productos.json'),'utf-8'));
-const categorias = require('../data/categorias.json')
+const categorias = require('../data/categorias.json');
+const marcas = require('../data/marcas.json');
+const secciones = require('../data/secciones.json')
+
 module.exports = {
     add: (req, res) =>{
         return res.render('productAdd',{
             productos,
-            categorias
+            categorias,
+            marcas,
+            secciones
         })
     },
     store: (req,res) => {
@@ -39,7 +44,12 @@ module.exports = {
     },
 
     edit: (req,res) => {
-        
+        return res.render('productEdit',{
+            productos,
+            categorias,
+            marcas,
+            secciones
+        })
     },
     update: (req,res) => {
         
