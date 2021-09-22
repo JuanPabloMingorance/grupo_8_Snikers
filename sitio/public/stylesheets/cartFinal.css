@@ -60,19 +60,23 @@ main.terminado div.pago img{
     margin-bottom: 50px;
 }
 
-main.terminado div h5{
+main.terminado div.cajaFinal h5{
     font-size: 20px;
     margin-top: 30px;
-    margin-left: 30px;
-}
+    margin-right: 150px;
+    }
+    main.terminado div.cajaFinal{
+        display: flex;
+        justify-content: space-between;
+    }
 
 
 @media (min-width:768px){
 
-    main.cart .aviso{
+    main.terminado .aviso{
         background-color:#f76d02;
         color: white;
-        display: none;
+        margin-top: 50px;
     }
 
     main.terminado img{

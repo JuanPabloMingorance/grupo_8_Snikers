@@ -76,12 +76,21 @@ display: flex;
 justify-content: flex-start;
 margin-left: 30px;
 }
+main.pago div.cajaFinal h5{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    }
+    main.pago div.cajaFinal{
+        display: flex;
+        justify-content: space-between;
+    }
 
 @media (min-width:768px){
-    main.cart .aviso{
+    main.pago .aviso{
         background-color:#f76d02;
         color: white;
-        display: none;
+        margin-top: 50px;
     }
 
     main.pago h1{
