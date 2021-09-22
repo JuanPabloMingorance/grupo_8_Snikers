@@ -18,8 +18,8 @@ module.exports = [
             return false
         }else{
             return true
-        }
-    }).withMessage('Credenciales inválidas'),
+        }99
+    }).withMessage('Email registrado'),
 
     check('password')
     .isLength({
