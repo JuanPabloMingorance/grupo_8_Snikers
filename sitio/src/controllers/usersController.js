@@ -67,5 +67,10 @@ module.exports = {
             title : 'perfil de usuarios',
             productos
         })
+    },
+    logout : (req,res) => {
+        req.session.destroy();
+        res.cookie('usuarioRemember',null,{maxAge: -1})
+        return res.redirect('/')
     }
 };

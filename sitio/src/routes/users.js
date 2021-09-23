@@ -9,6 +9,7 @@ router.post('/register',registerValidator,processRegister);
 router.get('/login',login);
 router.post('/login',loginValidator,processLogin);
 router.get('/profile',profile);
+router.get('/logout',logout);
 
 module.exports = router;
 
