@@ -32,6 +32,11 @@ main.entrega h4{
 margin-top: 30px;
 }
 
+main.entrega div.box-button{
+display: inline;
+
+}
+
 main.entrega section.datos{
 margin: 10px;
 }
@@ -73,10 +78,10 @@ main.entrega div.checkbox1 {
 
 
 main.entrega button{
-    width: 100%;
+    margin: 20px;
     background-color:black ;
     padding: 20px;
-    margin-bottom: 50px;
+
     color: white;
 }
 
@@ -98,57 +103,67 @@ main.entrega div.pago img{
     display: inline;
 
 }
-main.entrega div h5{
-font-size: 20px;
-margin-top: 30px;
-margin-left: 30px;
-}
+main.entrega div.cajaFinal h5{
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    }
+    main.entrega div.cajaFinal{
+        display: flex;
+        justify-content: space-between;
+    }
 
 @media (min-width:768px){
     main.entrega h4{
-    margin-top: 100px;
-    font-size: 40px;
+    margin-top: 50px;
+    font-size: 30px;
     }
 
-    main.cart .aviso{
+    main.entrega .aviso{
             background-color:#f76d02;
             color: white;
-            display: none;
+           margin-top: 50px;
         }
 
         main.entrega section.datos{
             position: relative;
             display: flex;
             flex-direction: column;
-            margin: 50px;
-            font-size: 25px;
+            margin: 5px;
             }
 
-            main.entrega div.correo{
-                font-size: 25px;
-            }
+        
 
             main.entrega div.checkbox {
-               font-size: 18px;
+               
                margin-top: 100px;
                 }
                 
                 main.entrega div.checkbox1 {
-                    font-size: 18px;
+                   
                     margin-bottom:  100px;
                     }
 
+                    main.entrega div.box-button{
+                    display: inline-block;
+            width: 20%;
+            margin-bottom: 50px;
+                        }
+
+                    main.entrega button{
+                        display: block;  
+                        width: auto; 
+                        margin: 50px;
+                    }
                     main.entrega div.button1{
                         width: 50%;
                         margin-bottom: 100px;
                     }
 
-                    main.entrega article div.box-button{
-                    margin-right: 10px;
-                    }
+                  
 
                     main.entrega div.sub{
-                        font-size: 30px;
+                        
                         margin-bottom: 50px;
                         }
 

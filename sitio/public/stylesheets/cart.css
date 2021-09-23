@@ -35,10 +35,11 @@ main.cart h4{
     justify-content: flex-start;
 }
 
-main.cart article img{
-    width: 50%;
+main.cart div.imagen img{
+    width: 50%; 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+background-color: brown;
 }
 
 main.cart section.resumen{
@@ -66,9 +67,11 @@ main.cart section article.tres{
 justify-content: space-between;
     }
 main.cart button{
-    width: 100%;
+   display: flex;
+   justify-content: space-around;
     background-color: black;
     padding: 20px;
+    margin: 20px;
 }
 
 
@@ -83,35 +86,49 @@ main.cart div.pago img{
     margin: 10px;
     padding: 10px;
     margin-bottom: 50px;
-    display: inline-block;
- 
+    display: inline;
+
 }
 
-main.cart div h5{
-    margin-top: 30px;
-    margin-left: 50px;
+main.cart div.cajaFinal h5{
     font-size: 20px;
+    margin-top: 30px;
+    margin-right: 150px;
+    }
+    main.cart div.cajaFinal{
+        display: flex;
+        justify-content: space-between;
     }
 
 @media (min-width:768px){
-
 main.cart .aviso{
-    background-color:#f76d02;
-    color: white;
-    display: none;
-}
+        
+        color: white;
+        margin-top: 50px;
+   
+    }
 
-main.cart h2{
-    margin-top: 100px;
-    font-size: 50px;
+    main.cart div.imagen img{
+        width: 80%; 
+     display: inline-block;
+    }
+
+main.cart section.resumen{
+    width: 50%;
+    font-size: 20px;
+display: inline-block;
+}
+main.cart div.posicion{
+    display: flex;
+    justify-content: space-around;
 }
 main.cart div h5{
-    font-size: 20px;
+    font-size: 30px;
   text-align: center;
 }
 
-main.cart div h4{
-    font-size: 30px;
+main.cart h4{
+    margin-top: 50px;
 }
 
 main.cart article img{
@@ -120,15 +137,14 @@ margin-top: 100px;
 }
 
 main.cart button{
-    width: 50%;
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: flex-start;
+display: block;  
+width: auto; 
+margin: 50px;
 }
 
 main.cart button a{
  font-size: 12px;
- padding-left:100px;
+ 
     }
 
 }

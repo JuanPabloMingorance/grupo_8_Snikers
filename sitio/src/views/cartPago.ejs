@@ -17,10 +17,13 @@
 
         <div>
             <P>Todas las transacciones se realizan de manera segura.</P></div>
-            <form class="form">
-                <div class="box-form">
+            
+     <div class="caja1">
+    <form action="">
+     <div class="box-form">
+        <div class="box-form">
             <h5>Cantidad de cuotas</h5>
-            <select name="cuotas" id="cuotas">
+            <select name="cantidad de cuotas" id="cantidad de cuotas" class="form-select">
                 <option value="" selected hidden>seleccione su opcion</option>
                 <option value="1">X1</option>
                 <option value="3">X3</option>
@@ -28,38 +31,40 @@
                 <option value="12">X12</option>
                 <option value="18">X18</option>
             </select>
-        </div>
+ 
+          </div>
 
-            <div class="box-form">
-                <h5>Numero</h5>
-<input type="number" required>
-<label>
-</label>
-</div>
+         <label for="numero">Numero</label>
+         <input type="number" name="numero" id="numero" class="form-control">
+         </div>
+     
+ 
+     <div class="box-form">
+         <label for="titular de la tarjeta">Titular de la tarjeta</label>
+         <input type="text" name="titular de la tarjeta" id="titular de la tarjeta" class="form-control">
+         <span class="text-danger small"></span>
+ </div>
 
-<div class="box-form">
-    <h5>titular de la tarjeta</h5>
-    <input type="text" required>
+ <div class="box-form">
+    <h5>Fecha de vencimiento</h5>
+    <input type="date" required>
     <label>
-
     </label>
     </div>
 
-    <div class="box-form">
-        <h5>Fecha de vencimiento</h5>
-        <input type="date" required>
-        <label>
-        </label>
-        </div>
+ <div class="box-form">
+    <label for="codigo de vencimiento">Codigo de vencimiento</label>
+    <input type="number" name="codigo de vencimiento" id="codigo de vencimiento" class="form-control">
+    </div>
+</form>
+</div>
 
-        <div class="box-form">
-            <h5>Codigo de vencimiento</h5>
-            <input type="number" required>
-            <label>
-        
-            </label>
-            </div>
-        </form>
+ 
+
+ 
+
+ 
+ 
 
     <div>
         <button type="submit"><a href="/cartFinal">FINALIZAR COMPRA</a></button>
@@ -68,13 +73,14 @@
         <p>Al hacer click en FINALIZAR COMPRA acepta los terminos y condiciones.</p>
     </div>
 
-
-    <div class="pago">
-        <h4>opciones de pago</h4>
-        <img src="/images/img-cart/visa.png" alt="">
-        <img src="/images/img-cart/master.png" alt="">
-        <img src="/images/img-cart/american.png" alt="">
-        </div>
+    <div class="cajaFinal">
+        <div class="pago">
+            <h5>opciones de pago</h5>
+            <img src="/images/img-cart/visa.png" alt="">
+            <img src="/images/img-cart/master.png" alt="">
+            <img src="/images/img-cart/american.png" alt="">
+            </div>
+    </div>
 
 
 
