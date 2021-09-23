@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
+const session = require('express-session')
 
 
 var mainRouter = require('./src/routes/main');
@@ -13,6 +14,11 @@ const productsRouter = require('./src/routes/products')
 var app = express();
 
 app.use(methodOverride('_method'));
+app.use(session(({
+  secret: 'Snikers',
+  resave: false,
+  saveUninitialized: true
+})))
 
 
 // view engine setup
