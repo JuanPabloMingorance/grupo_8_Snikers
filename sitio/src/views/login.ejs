@@ -19,7 +19,7 @@
                     <label for="remember">Recordar</label>
                     <input type="checkbox" name="remember" id="remember">
                     <button type="submit"><i class="fas fa-check"></i></button>
-                    <small></small>
+                    <small><%= locals.errores && errores.correo ? errores.correo.msg : null%></small>
                 </form>
             </div>
         </div>

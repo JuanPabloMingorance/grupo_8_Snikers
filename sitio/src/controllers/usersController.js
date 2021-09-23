@@ -40,9 +40,26 @@ module.exports = {
 
     processLogin : (req,res) => {
         let errors = validationResult(req);
-        return res.send(errors)
-            const {correo,password} = req.body;
+        //return res.send(errors.errors)
+        if(errors.isEmpty()){
+            
+            const {correo,remember} = req.body;
             let usuario = usuarios.find(usuario => usuario.correo === correo);
+            req.session.userLogin = {
+                id : usuario.id,
+                nombre: usuario.nombre,
+                rol: usuario.rol
+            }
+            if(remember){
+                res.cookie('usuarioRemember',req.session.userLogin,{maxAge: 1000 * 60})
+            }
+            return res.redirect('/')
+        }else{
+            return res.render('login',{
+                errores: errors.mapped()
+            })            
+        }
+            
     },
 
     profile: (req,res) => {

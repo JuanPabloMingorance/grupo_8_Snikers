@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
 const session = require('express-session')
-
+const cookieCheck = require('./src/middlewares/cookieUserCheck')
+const localsUserCheck = require('./src/middlewares/localsUserCheck')
 
 var mainRouter = require('./src/routes/main');
 var usersRouter = require('./src/routes/users');
@@ -14,11 +15,7 @@ const productsRouter = require('./src/routes/products')
 var app = express();
 
 app.use(methodOverride('_method'));
-app.use(session(({
-  secret: 'Snikers',
-  resave: false,
-  saveUninitialized: true
-})))
+
 
 
 // view engine setup
@@ -31,7 +28,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'public')));
 
+app.use(session(({
+  secret: 'Snikers',
+  resave: false,
+  saveUninitialized: true
+})))
 
+app.use(cookieCheck)
+
+app.use(localsUserCheck);
 
 
 
