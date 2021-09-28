@@ -3,7 +3,7 @@
     <%- include('./partials/head',{title: "CartPago"}) %> 
 <body class="pago">
     <% include partials/header %> 
-        <main class="pago">
+        <main class="cart">
             <div class="aviso">
                 <ul>
                     <li>1-Carrito</li>
@@ -12,8 +12,8 @@
                     <li>4-Pedido Completado</li>
                                              </ul>
                                                 </div>
-<div><h1>METODO DE PAGO</h1>
-</div>
+<h1>METODO DE PAGO</h1>
+
 
         <div>
             <P>Todas las transacciones se realizan de manera segura.</P></div>
@@ -22,7 +22,7 @@
     <form action="">
      <div class="box-form">
         <div class="box-form">
-            <h5>Cantidad de cuotas</h5>
+            <h6>Cantidad de cuotas</h6>
             <select name="cantidad de cuotas" id="cantidad de cuotas" class="form-select">
                 <option value="" selected hidden>seleccione su opcion</option>
                 <option value="1">X1</option>
@@ -46,7 +46,7 @@
  </div>
 
  <div class="box-form">
-    <h5>Fecha de vencimiento</h5>
+    <h6>Fecha de vencimiento</h6>
     <input type="date" required>
     <label>
     </label>
