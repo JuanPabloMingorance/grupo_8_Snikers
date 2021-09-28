@@ -40,9 +40,18 @@ module.exports = {
 
     processLogin : (req,res) => {
         let errors = validationResult(req);
-        return res.send(errors)
-            const {correo,password} = req.body;
-            let usuario = usuarios.find(usuario => usuario.correo === correo);
+    
+        if(errors.isEmpty()){
+            //logueame!!
+    
+        }else{
+            return res.render('login',{
+                title : 'Login',
+                productos,
+                errores : errors.mapped()
+            });
+        }
+       
     },
 
     profile: (req,res) => {
