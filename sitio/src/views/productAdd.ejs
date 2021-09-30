@@ -6,63 +6,84 @@
     <main class="admin">
       <h1>CARGA DE PRODUCTO</h1>
       <div class="caja1">
-        <form action="">
-         <div class="box-form">
-             <label for="nombre">Nombre</label>
-             <input type="text" name="nombre" id="nombre" class="form-control" value="<%= productos.Nombre %>">
-             </div>
-             <div class="box-form">
-                 <h5>Marca</h5>
-                 <select name="marca" id="marca" class="form-select">
-                  <option value="" selected hidden>Seleccione la Marca</option>
-                     <% marcas.forEach(marca => { %>
-                         <option value="<%= marca %>" <%= productos.marca === marca ? 'selected' : null %> ><%= marca %> </option>
-                     <% }) %>
-                 </select>
-                 <span class="text-danger small"></span>
-               </div>
-         <div class="box-form">
-             <label for="nombre">Descripcion</label>
-             <textarea name="descripcion" id="descripcion" cols="30" rows="3" class="form-control"><%= productos.Descripcion %></textarea>
-             <span class="text-danger small"></span>
-     
-         </div>
-         <div class="box-form">
-             <label for="precio">Precio</label>
-             <input type="number" name="precio" id="precio" class="form-control" value=<%= productos.Precio %> >
-             <span class="text-danger small"></span>
-     </div>
-     <div class="box-form">
-         <label for="stock">Stock</label>
-         <input type="number" name="stock" id="stock" class="form-control" value=<%= productos.Stock %>>
-         <span class="text-danger small"></span>
-       </div>
-       <div class="box-form">
-         <h5>Categoría</h5>
-         <select name="categoria" id="categoria" class="form-select">
-          <option value="" selected hidden>Seleccione la Categoria</option>
-             <% categorias.forEach(categoria => { %>
-                 <option value="<%= categoria %>" <%= productos.categoria === categoria ? 'selected' : null %> ><%= categoria %> </option>
-             <% }) %>
-         </select>
-         <span class="text-danger small"></span>
-       </div>
-     
-     <div class="box-form">
-         <label for="secciones">Secciones</label>
-         <select name="secciones" id="secciones" class="form-select">
-           <option value="" selected hidden>Seleccione la Seccion</option>
-           <% secciones.forEach(seccion => { %>
-             <option value="<%= seccion %>" <%= productos.seccion === seccion ? 'selected' : null %> ><%= seccion %> </option>
-         <% }) %>
-         </select>
-         <span class="text-danger small"></span>
-       </div>
-     
-         <div class="box-form">
-             <label for="imagen" class="btn btn-primary">Subir imagen</label>
-             <input type="file" name="imagen" id="imagen" hidden accept="image/*">
-         </div>
+      <form action="" method="POST" enctype="multipart/form-data">
+        <div class="box-form">
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" class="form-control <%= locals.errores && errores.nombre ? 'is-invalid' : null %>" value="<%= locals.old && old.nombre ? old.nombre : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %> </span>
+        </div>
+
+        
+
+        <div class="box-form">
+          <label for="descripcion">Descripcion</label>
+          <textarea
+            name="descripcion"
+            id=""
+            cols="30"
+            rows="3"
+            class="form-control <%= locals.errores && errores.descripcion ? 'is-invalid' : null %>"
+          ><%= locals.old && old.descripcion ? old.descripcion : null %></textarea>
+          <span class="text-danger"><%= locals.errores && errores.descripcion ? errores.descripcion.msg : null %> </span>        
+        </div>
+
+        <div class="box-form">
+          <label for="precio">Precio</label>
+          <input type="text" name="precio" id="precio" class="form-control <%= locals.errores && errores.precio ? 'is-invalid' : null %>" value="<%= locals.old && old.precio ? old.precio : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.precio ? errores.precio.msg : null %> </span>        
+        </div>
+       
+
+        <div class="box-form">
+          <label for="stock">Stock</label>
+          <input type="text" name="stock" id="stock" class="form-control <%= locals.errores && errores.stock ? 'is-invalid' : null %>" value="<%= locals.old && old.stock ? old.stock : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.stock ? errores.stock.msg : null %> </span>     
+        </div>
+
+        <div class="box-form">
+          <h4>Categoría</h4>
+          <select name="categoria" id="categoria" class="form-select <%= locals.errores && errores.categoria ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la categoría</option>
+            <% categorias.forEach(categoria => { %>
+              <option <%= locals.old && old.categoria ? 'selected' : null %> value="<%= categoria%>"><%= categoria%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.categoria ? errores.categoria.msg : null %> </span>     
+        </div>
+        <div class="box-form">
+          <h4>Marcas</h4>
+          <select name="marca" id="marca" class="form-select <%= locals.errores && errores.marca ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la marca</option>
+            <% marcas.forEach(marca => { %>
+              <option <%= locals.old && old.marca ? 'selected' : null %> value="<%= marca%>"><%= marca%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.marca ? errores.marca.msg : null %> </span>     
+        </div>
+
+        <div class="box-form">
+          <h4>Sección</h4>
+          <select name="seccion" id="seccion" class="form-select <%= locals.errores && errores.seccion ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la sección</option>
+            <% secciones.forEach(seccion => { %>
+              <option <%= locals.old && old.seccion ? 'selected' : null %> value="<%= seccion%>"><%= seccion%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.seccion ? errores.seccion.msg : null %> </span>     
+        </div>
+
+        <div class="box-form">
+          <label for="imagen" class="btn btn-primary">Subir imagen</label>
+          <input
+            type="file"
+            name="imagen"
+            id="imagen"
+            hidden
+            accept="image/*"
+          />
+          <span class="text-danger"><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </span>     
+        </div>
+
         
 
         <div class="box-button">
