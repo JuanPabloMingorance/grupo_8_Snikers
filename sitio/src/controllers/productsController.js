@@ -45,10 +45,11 @@ module.exports = {
 
     edit: (req,res) => {
         return res.render('productEdit',{
-            productos,
+            producto: productos.find(producto => producto.id === +req.params.id),
             categorias,
             marcas,
-            secciones
+            secciones,
+
         })
     },
     update: (req,res) => {
