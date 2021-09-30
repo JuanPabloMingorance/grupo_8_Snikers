@@ -5,15 +5,16 @@
     <% include partials/header %>
     <main class="admin">
       <h1>CARGA DE PRODUCTO</h1>
+      <div class="caja1">
       <form action="" method="POST" enctype="multipart/form-data">
         <div class="box-form">
           <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" id="nombre" class="form-control" />
+          <input type="text" name="nombre" id="nombre" class="form-control <%= locals.errores && errores.nombre ? 'is-invalid' : null %>" value="<%= locals.old && old.nombre ? old.nombre : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %> </span>
         </div>
-        <div class="box-form">
-          <label for="marca">Marca</label>
-          <input type="text" name="marca" id="nombre" class="form-control" />
-        </div>
+
+        
+
         <div class="box-form">
           <label for="descripcion">Descripcion</label>
           <textarea
@@ -21,39 +22,56 @@
             id=""
             cols="30"
             rows="3"
-            class="form-control"
-          ></textarea>
-          <span class="text-danger small"></span>
+            class="form-control <%= locals.errores && errores.descripcion ? 'is-invalid' : null %>"
+          ><%= locals.old && old.descripcion ? old.descripcion : null %></textarea>
+          <span class="text-danger"><%= locals.errores && errores.descripcion ? errores.descripcion.msg : null %> </span>        
         </div>
+
         <div class="box-form">
           <label for="precio">Precio</label>
-          <input type="number" name="precio" id="precio" class="form-control" />
-          <span class="text-danger small"></span>
+          <input type="text" name="precio" id="precio" class="form-control <%= locals.errores && errores.precio ? 'is-invalid' : null %>" value="<%= locals.old && old.precio ? old.precio : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.precio ? errores.precio.msg : null %> </span>        
+        </div>
+       
+
+        <div class="box-form">
+          <label for="stock">Stock</label>
+          <input type="text" name="stock" id="stock" class="form-control <%= locals.errores && errores.stock ? 'is-invalid' : null %>" value="<%= locals.old && old.stock ? old.stock : null %>"/>
+          <span class="text-danger"><%= locals.errores && errores.stock ? errores.stock.msg : null %> </span>     
+        </div>
+
+        <div class="box-form">
+          <h4>Categoría</h4>
+          <select name="categoria" id="categoria" class="form-select <%= locals.errores && errores.categoria ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la categoría</option>
+            <% categorias.forEach(categoria => { %>
+              <option <%= locals.old && old.categoria ? 'selected' : null %> value="<%= categoria%>"><%= categoria%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.categoria ? errores.categoria.msg : null %> </span>     
         </div>
         <div class="box-form">
-            <label for="stock">Stock</label>
-            <input type="number" name="stock" id="stock" class="form-control" />
-            <span class="text-danger small"></span>
-          </div>
-          <div class="box-form">
-            <h4>Categoría</h4>
-            <select name="categoria" id="categoria" class="form-select">
-              <option value="" selected hidden>Seleccione la categoría</option>
-              <option value="<%= categorias[0]%>">Running</option>
-              <option value="<%= categorias[1]%>">Futbol</option>
-              <option value="<%= categorias[2]%>">Classic</option>
-            </select>
-            <span class="text-danger small"></span>
-          </div>
-          <div class="box-form">
-            <label for="seccion">Seccion</label>
-            <select name="seccion" id="categoria" class="form-select">
-              <option value="" selected hidden>Seleccione la Seccion</option>
-              <option value="oferta">Oferta</option>
-              <option value="destacado">Destacado</option>
-            </select>
-            <span class="text-danger small"></span>
-          </div>
+          <h4>Marcas</h4>
+          <select name="marca" id="marca" class="form-select <%= locals.errores && errores.marca ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la marca</option>
+            <% marcas.forEach(marca => { %>
+              <option <%= locals.old && old.marca ? 'selected' : null %> value="<%= marca%>"><%= marca%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.marca ? errores.marca.msg : null %> </span>     
+        </div>
+
+        <div class="box-form">
+          <h4>Sección</h4>
+          <select name="seccion" id="seccion" class="form-select <%= locals.errores && errores.seccion ? 'is-invalid' : null %>">
+            <option value="" selected hidden>Seleccione la sección</option>
+            <% secciones.forEach(seccion => { %>
+              <option <%= locals.old && old.seccion ? 'selected' : null %> value="<%= seccion%>"><%= seccion%></option>
+            <% }) %>
+          </select>
+          <span class="text-danger"><%= locals.errores && errores.seccion ? errores.seccion.msg : null %> </span>     
+        </div>
+
         <div class="box-form">
           <label for="imagen" class="btn btn-primary">Subir imagen</label>
           <input
@@ -63,13 +81,16 @@
             hidden
             accept="image/*"
           />
+          <span class="text-danger"><%= locals.errores && errores.imagen ? errores.imagen.msg : null %> </span>     
         </div>
+
         
 
         <div class="box-button">
           <button type="submit">Agregar</button>
         </div>
       </form>
+      </div>
     </main>
     <% include partials/footer %>
   </body>

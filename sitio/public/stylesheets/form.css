@@ -1,12 +1,19 @@
-main.admin form {
 
+
+main.admin form {
+background-color:#ebebeb ;
 text-align: center;
 
 }
 
+main.admin div.caja1{
+    display: flex;
+    justify-content: space-around;
+}
+
 main.admin h1 {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 main.admin form div.box-form{
@@ -18,9 +25,8 @@ main.admin form button{
     margin: 50px 0;
     background-color: black;
     color: white;
-width: 100%;
-padding: 5px;
-
+    padding: 10px;
+    width: 100%;
 }
 
 main.admin form label.btn-primary{
@@ -34,9 +40,15 @@ main.admin form label.btn-primary{
         margin: 50px 0;
         background-color: black;
         color: white;
-    width: 20%;
-    padding: 5px;
+        width: 100%;
+        padding: 10px;
 
     
+}
+
+
+main.admin h1 {
+    text-align: center;
+    margin-top: 80px;
 }
 }
