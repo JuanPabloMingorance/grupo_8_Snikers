@@ -6,11 +6,12 @@
     <main class="admin">
         <h1>EDITAR PRODUCTOS</h1>
         <div class="caja1">
-   <form action="">
+   <form action="/products/edit/<%= producto.id %>?_method=PUT" method="post" enctype="multipart/form-data">
     <div class="box-form">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" class="form-control" value="<%= producto.Nombre %>">
         </div>
+        <span class="text-danger small"><%= locals.errors && errors.msg ? errors.msg : null %></span>
         <div class="box-form">
             <h5>Marca</h5>
             <select name="marca" id="marca" class="form-select">
@@ -66,7 +67,7 @@
 
 
     <div class="box-button">
-        <button type="submit">Guardar</button>
+            <button type="submit">Guardar</button>
     </div>
 </form>
 </div>

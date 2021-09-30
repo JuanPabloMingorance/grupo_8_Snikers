@@ -4,6 +4,7 @@ const productos = JSON.parse(fs.readFileSync(path.join(__dirname,'../data/produc
 const categorias = require('../data/categorias.json');
 const marcas = require('../data/marcas.json');
 const secciones = require('../data/secciones.json')
+const {validationResult} = require('express-validator');
 
 module.exports = {
     add: (req, res) =>{
@@ -15,6 +16,7 @@ module.exports = {
         })
     },
     store: (req,res) => {
+        return res.send(req.file)
 
         const {nombre, precio, descripcion, categoria,marca,seccion,stock} = req.body;
 
@@ -54,7 +56,32 @@ module.exports = {
     },
     update: (req,res) => {
         let errors = validationResult(req);
-        return res.send(errors)
+        return res.send(req.file)
+        let producto = productos.find(producto => producto.id === +req.params.id)
+
+        if(errors.isEmpty()){
+            
+            const {nombre,marca,descripcion,precio,stock,categoria,secciones,imagen} = req.body;
+
+            productos.forEach(producto => {
+                if(producto.id === +req.params.id){
+                    producto.nombre = nombre;
+                    producto.descripcion = descripcion;
+                    producto.precio = +precio;
+                    producto.categoria = categoria
+                }
+            });
+    
+            fs.writeFileSync(path.join(__dirname,'..','data','productos.json'),JSON.stringify(productos,null,2),'utf-8');
+            return res.redirect('/')
+        }else{
+            return res.render('productEdit',{
+                productos,
+                categorias,
+                producto,
+                errores : errors.mapped(),
+            })
+        }
     },
     destroy: (req,res) => {
         let productosModificados = productos.filter(producto => producto.id !== +req.params.id);
