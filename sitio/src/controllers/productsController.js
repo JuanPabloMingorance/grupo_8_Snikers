@@ -6,6 +6,8 @@ const marcas = require('../data/marcas.json');
 const secciones = require('../data/secciones.json')
 const {validationResult} = require('express-validator');
 
+const {validationResult} = require('express-validator')
+
 module.exports = {
     add: (req, res) =>{
         return res.render('productAdd',{
@@ -16,8 +18,9 @@ module.exports = {
         })
     },
     store: (req,res) => {
-        return res.send(req.file)
+        let errors = validationResult(req);
 
+        if(errors.isEmpty()){
         const {nombre, precio, descripcion, categoria,marca,seccion,stock} = req.body;
 
         let producto = {
@@ -34,6 +37,16 @@ module.exports = {
         productos.push(producto);
         fs.writeFileSync(path.join(__dirname,'..','data','productos.json'),JSON.stringify(productos,null,2),'utf-8');
             return res.redirect('/admin');
+}else{
+            return res.render('productAdd',{
+                productos,
+                categorias,
+                marcas,
+                secciones,
+                errores : errors.mapped(),
+                old : req.body
+            })
+        }
 
     },
         
