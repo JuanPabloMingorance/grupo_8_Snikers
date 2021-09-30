@@ -130,6 +130,16 @@
     "Imagen": "18.jpg",
     "Stock": 62,
     "Seccion": "destacado"
+  },
+  {
+    "id": 13,
+    "Nombre": "Zapatilla",
+    "Precio": 5001,
+    "Marca": "Yeezy Originals",
+    "Descripcion": "lorem ipsum amet",
+    "Categoria": "Classic",
+    "Stock": "180",
+    "Imagen": "img-product-1633020457311.webp",
+    "Seccion": "Oferta"
   }
-
 ]
