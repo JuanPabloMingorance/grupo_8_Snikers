@@ -53,8 +53,7 @@ module.exports = {
         })
     },
     update: (req,res) => {
-        let errors = validationResult(req);
-        return res.send(errors)
+      
     },
     destroy: (req,res) => {
         let productosModificados = productos.filter(producto => producto.id !== +req.params.id);
