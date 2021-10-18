@@ -68,8 +68,8 @@ header nav.menu ul{
     flex-wrap: wrap;
     justify-content: space-between;
     align-self: center;
-    padding-bottom: 5px;
-    margin-top: 3px;
+    padding-left: 10px;
+    margin: 0;
 }
 
 header nav.menu ul li{
@@ -101,7 +101,7 @@ header nav.menu ul li a{
 header nav.menu{
     width: 33%;
     display: none;
-    height: 105px;
+    height: auto;
     z-index: 1;
 }
 
@@ -146,6 +146,9 @@ header nav div.search-bar input:focus ~ i{
     color: var(--color-naranja);
 }
 
+ol ul{
+    padding-left: 0;
+}
 
 /* header nav label:hover{
     color: var(--color-naranja);

@@ -9,11 +9,24 @@
     <input type="checkbox" id="navmenu">
     <nav class="menu">
         <ul>
+        <% if ( locals.userLogin) { %> 
             <li><a href="/">Home<i class="fas fa-home"></i></i></a></li>
+            <li><a href="/cart">Carrito<i class="fas fa-shopping-cart"></i></a></li>
+            
+            <span>  Hola <%= locals.userLogin.nombre %> <i class="fa fa-heart" aria-hidden="true"></i></span>
+            
+            <% if (locals.userLogin.rol === 'admin') { %>
+
+            <li><a href="/admin">admin <i class="fas fa-user-secret" aria-hidden="true"></i></a></li>
+            
+            <% } %> 
+        <% } else { %> 
+            <li><a href="/">Home<i class="fas fa-home"></i></i></a></li>
+            <li><a href="/cart">Carrito<i class="fas fa-shopping-cart"></i></a></li>
             <li><a href="/users/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
             <li><a href="/users/register">Registro<i class="fas fa-user-plus"></i></a></li>
-            <li><a href="/cart">Carrito<i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="/admin">admin<i class="fas fa-shopping-cart"></i></a></li>
+            
+        <% } %>   
         </ul>
     </nav>
 </header>
