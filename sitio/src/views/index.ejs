@@ -1,198 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head',{title: "Home"}) %> 
- <body class="index">
-    <% include partials/header %> 
-     <main>
-           <div class="container-fluid">
+<%- include('./partials/head',{title: "Home" }) %>
 
-             <div class="unico">
-                      <section class="marcas">
-                      <div class="imagenes">
-                        <img src="/images/img_index/marcas/logoAdidas.jpg" alt="">
-                        <img src="/images/img_index/marcas/logoJordan.jpg" alt="">
-                        <img src="/images/img_index/marcas/logoNike.jpg" alt="">
-                        <img src="/images/img_index/marcas/logoYzy.jpg" alt="">
-                      </div>
-                     </section>
+    <body class="index">
+        <% include partials/header %>
+            <main>
+                <div class="container-fluid">
 
-                     <section>
-                         <div class="carrusel-Ofertas">
-                          <div>
-                            <p>Ofertas</p>
-                            <hr class="ofertas">
-                          </div>
-                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="unico">
+                        <section class="marcas">
+                            <div class="imagenes">
+                                <img src="/images/img_index/marcas/logoAdidas.jpg" alt="">
+                                <img src="/images/img_index/marcas/logoJordan.jpg" alt="">
+                                <img src="/images/img_index/marcas/logoNike.jpg" alt="">
+                                <img src="/images/img_index/marcas/logoYzy.jpg" alt="">
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="carrusel-Ofertas">
+                                <div>
+                                    <p>Ofertas</p>
+                                    <hr class="ofertas">
+                                </div>
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <section class="articulos">
+                                                <% for( let i=0; i < 3; i++ ) { %>
+                                                    <article>
+                                                        <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> "
+                                                            alt="zapatillas mujer">
+                                                        <div class="datos">
+                                                            <div class="caja1">
+                                                                <h4>
+                                                                    <%= ofertas[i].Nombre %>
+                                                                </h4>
+                                                                <p>
+                                                                    <%= ofertas[i].Precio %>
+                                                                </p>
+                                                            </div>
+                                                            <div class="caja2">
+
+                                                                <div class="heart"><i class="far fa-heart"></i></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    <% } %>
+
+                                            </section>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <section class="articulos">
+                                                <% for( let i=3; i < 6; i++ ) { %>
+                                                    <article>
+                                                        <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> "
+                                                            alt="zapatillas hombre">
+                                                        <div class="datos">
+                                                            <div class="caja1">
+                                                                <h4>
+                                                                    <%= ofertas[i].Nombre %>
+                                                                </h4>
+                                                                <p>
+                                                                    <%= ofertas[i].Precio %>
+                                                                </p>
+                                                            </div>
+                                                            <div class="caja2">
+
+                                                                <div class="heart"><i class="far fa-heart"></i></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    <% } %>
+                                            </section>
+
+                                        </div>
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                        <section>
+                            <div class="carrusel-destacado">
+                                <div>
+                                    <p>Productos destacados</p>
+                                    <hr class="destacados">
+                                </div>
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <section class="articulos">
+                                                <% for( let i=0; i < 3; i++ ) { %>
+                                                    <article>
+                                                        <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> "
+                                                            alt="">
+                                                        <div class="datos">
+                                                            <div class="caja1">
+                                                                <h4>
+                                                                    <%= destacados[i].Nombre %>
+                                                                </h4>
+                                                                <p>
+                                                                    <%= destacados[i].Precio %>
+                                                                </p>
+                                                            </div>
+                                                            <div class="caja2">
+
+                                                                <div class="heart"><i class="far fa-heart"></i></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    <% } %>
+
+                                            </section>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <section class="articulos">
+                                                <% for( let i=3; i < 6; i++ ) { %>
+                                                    <article>
+                                                        <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> "
+                                                            alt="">
+                                                        <div class="datos">
+                                                            <div class="caja1">
+                                                                <h4>
+                                                                    <%= destacados[i].Nombre %>
+                                                                </h4>
+                                                                <p>
+                                                                    <%= destacados[i].Precio %>
+                                                                </p>
+                                                            </div>
+                                                            <div class="caja2">
+
+                                                                <div class="heart"><i class="far fa-heart"></i></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </article>
+                                                    <% } %>
+                                            </section>
+                                        </div>
+                                    </div>
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="carrusel-final">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <section class="articulos">
-                                        <% for( let i = 0; i < 3; i++ ) { %>
-                                            <article>
-                                                <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> " alt="zapatillas mujer">
-                                                <div class="datos">
-                                                    <div class="caja1">
-                                                        <h4><%= ofertas[i].Nombre %></h4>
-                                                        <p><%= ofertas[i].Precio %></p>
-                                                    </div>
-                                                    <div class="caja2">
-                                                        
-                                                        <div class="heart"><i class="far fa-heart"></i></div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </article>
-                                        <% } %>
-                
-                                    </section>
+                                    <img src="/images/img_index/bann/ban1.jpg" class="imagen1" alt="imagen1"><img
+                                        class="imagen2" src="/images/img_index/bann/ban2.jpg" alt="imagen2">
                                 </div>
                                 <div class="carousel-item">
-                                    <section class="articulos">
-                                        <% for( let i = 3; i < 6; i++ ) { %>
-                                            <article>
-                                                <img src="/images/img_index/los mas vendidos/<%= ofertas[i].Imagen %> " alt="zapatillas hombre">
-                                                <div class="datos">
-                                                    <div class="caja1">
-                                                        <h4><%= ofertas[i].Nombre %></h4>
-                                                        <p><%= ofertas[i].Precio %></p>
-                                                    </div>
-                                                    <div class="caja2">
-                                                        
-                                                        <div class="heart"><i class="far fa-heart"></i></div>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </article>
-                                        <% } %>
-                                    </section>
-
+                                    <img src="/images/img_index/bann/ban3.jpg" class="imagen1" alt=""><img
+                                        src="/images/img_index/bann/ban6.jpg" class="imagen2" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="/images/img_index/bann/ban1.jpg" class="imagen1" alt=""><img
+                                        src="/images/img_index/bann/ban2.jpg" class="imagen2" alt="">
                                 </div>
                             </div>
-
                             <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
-                         </div>
-                    </section>
-
-              
-
-                  <section>
-                     <div class="carrusel-destacado">
-                          <div>
-                            <p>Productos destacados</p>
-                            <hr class="destacados">
-                          </div>
-                          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <section class="articulos">
-                                        <% for( let i = 0; i < 3; i++ ) { %>
-                                            <article>
-                                                <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> " alt="">
-                                                <div class="datos">
-                                                    <div class="caja1">
-                                                        <h4><%= destacados[i].Nombre %> </h4>
-                                                        <p><%= destacados[i].Precio %> </p>
-                                                    </div>
-                                                    <div class="caja2">
-                                                        
-                                                        <div class="heart"><i class="far fa-heart"></i></div>
-                                                    </div>
-                                                   
-                                                </div>
-                                            </article>
-                                        <% } %>
-                                 
-                                    </section>
-                                </div>
-                                <div class="carousel-item">
-                                    <section class="articulos">
-                                        <% for( let i = 3; i < 6; i++ ) { %>
-                                            <article>
-                                                <img src="/images/img_index/los mas vendidos/<%= destacados[i].Imagen %> " alt="">
-                                                <div class="datos">
-                                                    <div class="caja1">
-                                                        <h4><%= destacados[i].Nombre %> </h4>
-                                                        <p><%= destacados[i].Precio %> </p>
-                                                    </div>
-                                                    <div class="caja2">
-                                                        
-                                                        <div class="heart"><i class="far fa-heart"></i></div>
-                                                    </div>
-                                                   
-                                                </div>
-                                            </article>
-                                        <% } %>
-                                    </section>
-                                </div>
-                            </div>
-                            
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                     </div>
-                 </section>
-                 </div>
-
-                 <div class="carrusel-final">
-                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="/images/img_index/bann/ban1.jpg" class="imagen1" alt="imagen1"><img class="imagen2" src="/images/img_index/bann/ban2.jpg"
-                                alt="imagen2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/img_index/bann/ban3.jpg" class="imagen1" alt=""><img src="/images/img_index/bann/ban6.jpg" class="imagen2"
-                                alt="">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="/images/img_index/bann/ban1.jpg" class="imagen1" alt=""><img src="/images/img_index/bann/ban2.jpg"
-                                class="imagen2" alt="">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                  </div>
                 </div>
-           </div>
-        </main>
-        <% include partials/footer %> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
- </body>
+                </div>
+            </main>
+            <% include partials/footer %>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossorigin="anonymous"></script>
+    </body>
 
 </html>

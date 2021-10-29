@@ -6,12 +6,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
 const session = require('express-session')
-const cookieCheck = require('./src/middlewares/cookieUserCheck')
-const localsUserCheck = require('./src/middlewares/localsUserCheck')
+const cookieCheck = require('./middlewares/cookieUserCheck')
+const localsUserCheck = require('./middlewares/localsUserCheck')
 
-var mainRouter = require('./src/routes/main');
-var usersRouter = require('./src/routes/users');
-const productsRouter = require('./src/routes/products')
+var mainRouter = require('./routes/main');
+var usersRouter = require('./routes/users');
+const productsRouter = require('./routes/products')
 
 var app = express();
 
