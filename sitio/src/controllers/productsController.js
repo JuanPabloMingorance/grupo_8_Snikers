@@ -76,46 +76,84 @@ module.exports = {
     },
 
     edit: (req, res) => {
-        return res.render('productEdit', {
-            producto: productos.find(producto => producto.id === +req.params.id),
-            categorias,
-            marcas,
-            secciones,
 
-        })
+        let categorias = db.Category.findAll();
+        let secciones = db.Section.findAll();
+        let marcas = db.Brand.findAll();
+        let producto = db.Product.findByPk(req.params.id,{
+            include : [{all:true}]
+        });
+
+        Promise.all([categorias, secciones, marcas, producto])
+            .then(([categorias, secciones, marcas, producto]) => {
+               return res.render('admin/productEdit', {
+                    categorias,
+                    marcas,
+                    secciones,
+                    producto
+                })
+            })
+            .catch(error => console.log(error))
     },
     update: (req, res) => {
         let errors = validationResult(req);
-        let producto = productos.find(producto => producto.id === +req.params.id)
 
         if (errors.isEmpty()) {
 
             const { nombre, marca, descripcion, precio, stock, categoria, seccion } = req.body;
 
-            productos.forEach(producto => {
-                if (producto.id === +req.params.id) {
-                    producto.Nombre = nombre;
-                    producto.Descripcion = descripcion;
-                    producto.Precio = +precio;
-                    producto.Categoria = categoria;
-                    producto.Marca = marca;
-                    producto.Stock = stock;
-                    producto.Seccion = seccion;
-                    producto.Imagen = req.file.filename;
+            db.Product.update(
+                {
+                    nombre : nombre.trim(),
+                    descripcion: descripcion.trim(),
+                    precio,
+                    stock,
+                    marca_id : marca,
+                    categoria_id : categoria,
+                    seccion_id : seccion,
+                },
+                {
+                    where : {
+                        id : req.params.id
+                    }
                 }
-            });
-
-            fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'), JSON.stringify(productos, null, 2), 'utf-8');
-            return res.redirect('/admin')
-        } else {
-            return res.render('productEdit', {
-                productos,
-                categorias,
-                producto,
-                marcas,
-                secciones,
-                errores: errors.mapped(),
+            ).then( () => {
+                if(req.file){
+                    db.Image.update(
+                        {
+                            file: req.file.filename
+                        },
+                        {
+                            where : {
+                                product_id : req.params.id
+                            }
+                        }
+                    ).then( () => res.redirect('/admin'))
+                }
+                return res.redirect('/admin')
             })
+            .catch(error => console.log(error))
+
+           
+        } else {
+            let categorias = db.Category.findAll();
+            let secciones = db.Section.findAll();
+            let marcas = db.Brand.findAll();
+            let producto = db.Product.findByPk(req.params.id,{
+                include : [{all:true}]
+            });
+    
+            Promise.all([categorias, secciones, marcas, producto])
+                .then(([categorias, secciones, marcas, producto]) => {
+                   return res.render('admin/productEdit', {
+                        categorias,
+                        marcas,
+                        secciones,
+                        producto,
+                        errores : errors.mapped()
+                    })
+                })
+                .catch(error => console.log(error))
         }
     },
     destroy: (req, res) => {

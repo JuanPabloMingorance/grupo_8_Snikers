@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head',{title: "Agregar producto" }) %>
+<%- include('./partials/head',{title: "Editar producto" }) %>
 
   <body style="background-color: var(--color-gris);">
     <%- include('./partials/header') %>
@@ -9,10 +9,10 @@
           <div class="col-12 col-md-10 mx-auto">
             <div class="card">
               <div class="card-header">
-                <h5>Carga de producto</h5>
+                <h5>Edición de producto</h5>
               </div>
               <div class="card-body">
-                <form action="" method="POST" enctype="multipart/form-data" id="form-add-product">
+                <form action="/products/edit/<%= producto.id %>?_method=PUT " method="POST" enctype="multipart/form-data" id="form-add-product">
                   <div class="row">
                     <div class="col-12 col-md-6 mb-3">
                       <div class="row">
@@ -20,7 +20,7 @@
                             <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" id="nombre"
                               class="form-control <%= locals.errores && errores.nombre ? 'is-invalid' : null %>"
-                              value="<%= locals.old && old.nombre ? old.nombre : null %>" />
+                              value="<%= producto.nombre%>" />
                             <span class="text-danger" id="nameError">
                               <%= locals.errores && errores.nombre ? errores.nombre.msg : null %>
                             </span>
@@ -28,7 +28,7 @@
                         <div class="col-12">
                           <label for="descripcion">Descripcion</label>
                           <textarea name="descripcion" id="" cols="30" rows="3"
-                            class="form-control <%= locals.errores && errores.descripcion ? 'is-invalid' : null %>" style="resize: none;"><%= locals.old && old.descripcion ? old.descripcion : null %></textarea>
+                            class="form-control <%= locals.errores && errores.descripcion ? 'is-invalid' : null %>" style="resize: none;"><%= producto.descripcion %></textarea>
                           <span class="text-danger" id="descriptionError">
                             <%= locals.errores && errores.descripcion ? errores.descripcion.msg : null %>
                           </span>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-12 col-md-6 mb-3" >
                       <figure class="mx-auto w-50">
-                        <img class="img-fluid" src="" alt="" id="preview">
+                        <img class="img-fluid" src="/images/products/<%= producto.imagenes[0].file %>" alt="" id="preview">
 
                       </figure>
                     </div>
@@ -47,7 +47,7 @@
                     <label for="precio">Precio</label>
                     <input type="number" name="precio" id="precio"
                       class="form-control <%= locals.errores && errores.precio ? 'is-invalid' : null %>"
-                      value="<%= locals.old && old.precio ? old.precio : null %>" />
+                      value="<%= producto.precio %>" />
                     <span class="text-danger" id="priceError">
                       <%= locals.errores && errores.precio ? errores.precio.msg : null %>
                     </span>
@@ -58,7 +58,7 @@
                     <label for="stock">Stock</label>
                     <input type="number" name="stock" id="stock"
                       class="form-control <%= locals.errores && errores.stock ? 'is-invalid' : null %>"
-                      value="<%= locals.old && old.stock ? old.stock : null %>" />
+                      value="<%= producto.stock %>" />
                     <span class="text-danger" id="stockError">
                       <%= locals.errores && errores.stock ? errores.stock.msg : null %>
                     </span>
@@ -70,7 +70,7 @@
                       class="form-select <%= locals.errores && errores.categoria ? 'is-invalid' : null %>">
                       <option value="" selected hidden>Seleccione la categoría</option>
                       <% categorias.forEach(categoria=> { %>
-                        <option <%=locals.old && old.categoria  ? 'selected' : null %> value="<%= categoria.id%>"><%=
+                        <option <%=producto.categoria.id === categoria.id  ? 'selected' : null %> value="<%= categoria.id%>"><%=
                               categoria.nombre%>
                         </option>
                         <% }) %>
@@ -86,7 +86,7 @@
                       class="form-select <%= locals.errores && errores.marca ? 'is-invalid' : null %>">
                       <option value="" selected hidden>Seleccione la marca</option>
                       <% marcas.forEach(marca=> { %>
-                        <option <%=locals.old && old.marca ? 'selected' : null %> value="<%= marca.id%>"><%= marca.nombre%>
+                        <option <%=producto.marca.id === marca.id ? 'selected' : null %> value="<%= marca.id%>"><%= marca.nombre%>
                         </option>
                         <% }) %>
                     </select>
@@ -101,7 +101,7 @@
                       class="form-select <%= locals.errores && errores.seccion ? 'is-invalid' : null %>">
                       <option value="" selected hidden>Seleccione la sección</option>
                       <% secciones.forEach(seccion=> { %>
-                        <option <%=locals.old && old.seccion ? 'selected' : null %> value="<%= seccion.id%>"><%= seccion.nombre%>
+                        <option <%= producto.seccion.id === seccion.id ? 'selected' : null %> value="<%= seccion.id%>"><%= seccion.nombre%>
                         </option>
                         <% }) %>
                     </select>
@@ -112,7 +112,7 @@
 
                   <div class="col-12 col-md-6 mb-3 mt-4 text-center">
                     <div class="d-grid">
-                      <label for="imagen" class="btn btn-outline-dark" id="btnImagen">Subir imagen</label>
+                      <label for="imagen" class="btn btn-outline-dark" id="btnImagen">Cambiar imagen</label>
                       <input type="file" name="imagen" id="imagen" hidden accept="image/*" />
                       <span class="text-danger" id="imageError">
                         <%= locals.errores && errores.imagen ? errores.imagen.msg : null %>
@@ -127,7 +127,7 @@
 
                   <div class="col-12  mt-4 text-center">
                  
-                    <button class="btn btn-outline-dark" type="submit">Agregar producto</button>
+                    <button class="btn btn-outline-dark" type="submit">Guardar cambios</button>
                   </div>
                 </div>
 
@@ -138,7 +138,7 @@
         </div>
 
       </main>
-      <script src="/javascript/productAdd.js"></script>
+      <script src="/javascript/productEdit.js"></script>
   </body>
 
 </html>
