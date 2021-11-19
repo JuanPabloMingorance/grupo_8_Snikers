@@ -1,21 +1,21 @@
-const toThousand =  n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
 
 module.exports = {
   index: (req, res) => {
     let ofertas = db.Product.findAll({
-      where : {
-        seccion_id : 1
+      where: {
+        seccion_id: 1
       },
-      include : [{all: true}]
+      include: [{ all: true }]
     })
     let destacados = db.Product.findAll({
-      where : {
-        seccion_id : 2
+      where: {
+        seccion_id: 2
       },
-      include : [{all: true}]
+      include: [{ all: true }]
     })
-    Promise.all([ofertas,destacados])
+    Promise.all([ofertas, destacados])
       .then(([ofertas, destacados]) => {
         return res.render("index", {
           title: "Snikers",
@@ -37,39 +37,46 @@ module.exports = {
         productos: resultado,
         busqueda: req.query.busqueda,
       })
-    }  
-      return res.redirect('/')
-    
+    }
+    return res.redirect('/')
+
   },
 
-   admin : (req,res) => {
-        return res.render('admin/admin',{
-            title: "Administrador",
-            productos :  JSON.parse(fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8"))
+  admin: (req, res) => {
+
+    db.Product.findAll({
+      include: [{ all: true }]
+    })
+      .then(productos => {
+        return res.render('admin/admin', {
+          title: "Administrador",
+          productos,
         })
-    },
-
-   cart: (req, res) => {
-      return res.render("cart", {
-        productos
-      });
+      })
+      .catch(error => console.log(error))
   },
 
-   cartEntrega: (req, res) => {
+  cart: (req, res) => {
+    return res.render("cart", {
+      productos
+    });
+  },
+
+  cartEntrega: (req, res) => {
     return res.render("cartEntrega", {
       productos
     });
   },
 
-   cartPago: (req, res) => {
-      return res.render("cartPago", {
-        productos
-      });
-    },
+  cartPago: (req, res) => {
+    return res.render("cartPago", {
+      productos
+    });
+  },
 
-   cartFinal: (req, res) => {
-        return res.render("cartFinal", {
-          productos
-        });
-      }
+  cartFinal: (req, res) => {
+    return res.render("cartFinal", {
+      productos
+    });
+  }
 };

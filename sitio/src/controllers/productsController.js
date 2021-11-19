@@ -1,55 +1,73 @@
-const fs = require('fs');
-const path = require('path');
-const productos = JSON.parse(fs.readFileSync(path.join(__dirname,'../data/productos.json'),'utf-8'));
-const categorias = require('../data/categorias.json');
-const marcas = require('../data/marcas.json');
-const secciones = require('../data/secciones.json')
-const {validationResult} = require('express-validator');
+const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 
 module.exports = {
-    add: (req, res) =>{
-        return res.render('productAdd',{
-            productos,
-            categorias,
-            marcas,
-            secciones
-        })
+    add: (req, res) => {
+
+        let categorias = db.Category.findAll();
+        let secciones = db.Section.findAll();
+        let marcas = db.Brand.findAll();
+
+        Promise.all([categorias, secciones, marcas])
+            .then(([categorias, secciones, marcas]) => {
+
+                return res.render('admin/productAdd', {
+                    categorias,
+                    marcas,
+                    secciones
+                })
+            })
+            .catch(error => console.log(error))
     },
-    store: (req,res) => {
+    store: (req, res) => {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-        const {nombre, precio, descripcion, categoria,marca,seccion,stock} = req.body;
+        if (errors.isEmpty()) {
+            const { nombre, precio, descripcion, categoria, marca, seccion, stock } = req.body;
 
-        let producto = {
-            id : productos[productos.length - 1].id + 1,
-            Nombre:  nombre,
-            Precio : precio,
-            Marca: marca,
-            Descripcion : descripcion,
-            Categoria : categoria,
-            Stock: stock,
-            Seccion: seccion 
-        };
+            db.Product.create(
+                {
+                    nombre : nombre.trim(),
+                    descripcion : descripcion.trim(),
+                    precio,
+                    stock,
+                    marca_id : marca,
+                    seccion_id : seccion,
+                    categoria_id : categoria
+                }
+            ).then( product => {
+                db.Image.create({
+                    file : req.file.filename,
+                    product_id : product.id
+                })
+                .then( () =>  res.redirect('/admin'))
+               
+            }).catch(error => console.log(error))
 
-        productos.push(producto);
-        fs.writeFileSync(path.join(__dirname,'..','data','productos.json'),JSON.stringify(productos,null,2),'utf-8');
-            return res.redirect('/admin');
-}else{
-            return res.render('productAdd',{
-                productos,
-                categorias,
-                marcas,
-                secciones,
-                errores : errors.mapped(),
-                old : req.body
-            })
+
+        } else {
+            let categorias = db.Category.findAll();
+            let secciones = db.Section.findAll();
+            let marcas = db.Brand.findAll();
+    
+            Promise.all([categorias, secciones, marcas])
+                .then(([categorias, secciones, marcas]) => {
+    
+                    return res.render('admin/productAdd', {
+                        categorias,
+                        marcas,
+                        secciones,
+                        old : req.body,
+                        errores : errors.mapped()
+                    })
+                })
+                .catch(error => console.log(error))
         }
 
     },
-        
-    detail: (req,res) => {
+
+    detail: (req, res) => {
         let producto = productos.find(producto => producto.id === +req.params.id)
         return res.render('productDetail', {
             productos,
@@ -57,8 +75,8 @@ module.exports = {
         })
     },
 
-    edit: (req,res) => {
-        return res.render('productEdit',{
+    edit: (req, res) => {
+        return res.render('productEdit', {
             producto: productos.find(producto => producto.id === +req.params.id),
             categorias,
             marcas,
@@ -66,16 +84,16 @@ module.exports = {
 
         })
     },
-    update: (req,res) => {
+    update: (req, res) => {
         let errors = validationResult(req);
         let producto = productos.find(producto => producto.id === +req.params.id)
 
-        if(errors.isEmpty()){
-            
-            const {nombre,marca,descripcion,precio,stock,categoria,seccion} = req.body;
+        if (errors.isEmpty()) {
+
+            const { nombre, marca, descripcion, precio, stock, categoria, seccion } = req.body;
 
             productos.forEach(producto => {
-                if(producto.id === +req.params.id){
+                if (producto.id === +req.params.id) {
                     producto.Nombre = nombre;
                     producto.Descripcion = descripcion;
                     producto.Precio = +precio;
@@ -86,25 +104,25 @@ module.exports = {
                     producto.Imagen = req.file.filename;
                 }
             });
-    
-            fs.writeFileSync(path.join(__dirname,'..','data','productos.json'),JSON.stringify(productos,null,2),'utf-8');
+
+            fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'), JSON.stringify(productos, null, 2), 'utf-8');
             return res.redirect('/admin')
-        }else{
-            return res.render('productEdit',{
+        } else {
+            return res.render('productEdit', {
                 productos,
                 categorias,
                 producto,
                 marcas,
                 secciones,
-                errores : errors.mapped(),
+                errores: errors.mapped(),
             })
         }
     },
-    destroy: (req,res) => {
+    destroy: (req, res) => {
         let productosModificados = productos.filter(producto => producto.id !== +req.params.id);
 
-        fs.writeFileSync(path.join(__dirname,'..','data','productos.json'),JSON.stringify(productosModificados,null,2),'utf-8');
+        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'), JSON.stringify(productosModificados, null, 2), 'utf-8');
         return res.redirect('/admin')
     },
-    
+
 }
