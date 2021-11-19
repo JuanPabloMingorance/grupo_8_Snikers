@@ -10,22 +10,32 @@
         <form action="" method="POST">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre">
+                    <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre" value=<%= locals.old && locals.old.nombre ? locals.old.nombre : null  %> >
+                    <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? locals.errores.nombre.msg  : null%> </span>
                 </div>
                 <div class="col-12 col-md-6">
-                    <input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido">
+                    <input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido" value=<%= locals.old && locals.old.apellido ? locals.old.apellido : null  %>>
+                    <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? locals.errores.apellido.msg : null %> </span>
                 </div>
                 <div class="col-12">
-                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" value=<%= locals.old && locals.old.correo ? locals.old.correo : null  %>>
+                    <span class="text-danger small"><%= locals.errores && locals.errores.correo ? locals.errores.correo.msg : null %> </span>
                 </div>
                 <div class="col-12 col-md-6">
                    <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+                   <span class="text-danger small"><%= locals.errores && locals.errores.password ? locals.errores.password.msg  : null%> </span>
                 </div>
                 <div class="col-12 col-md-6">
                    <input class="controls" type="password" name="password2" id="password2" placeholder="Confirme su Contraseña">
+                   <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? locals.errores.password2.msg : null %> </span>
                 </div>
             </div>
-        <input type="checkbox" name="terminos" id="terminos"> <a href="#">Terminos y Condiciones</a>
+        <input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Terminos y Condiciones</label> 
+        <div>
+            <span class="text-danger small"><%= locals.errores && locals.errores.terminos ? locals.errores.terminos.msg : null %> </span>
+
+        </div>
+
         <input class="botons" type="submit" value="REGISTRATE">
         <p><a href="/users/login">¿Ya tengo Cuenta?</a></p>
     </form>

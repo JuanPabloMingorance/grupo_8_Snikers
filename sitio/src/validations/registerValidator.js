@@ -1,8 +1,6 @@
 const {check,body} = require('express-validator');
-const path = require('path');
-const fs = require('fs');
-const usuarios = JSON.parse(fs.readFileSync(path.join(__dirname,'..','data','usuarios.json'),'utf-8'));
 const bcryptjs = require('bcryptjs');
+const db = require('../database/models');
 
 module.exports = [
     check('nombre')
@@ -12,14 +10,16 @@ module.exports = [
 
      body('correo')
     .custom((value,{req}) => {
-        let usuario = usuarios.find(usuario => usuario.email === value);
-
-        if(usuario){
-            return false
-        }else{
-            return true
-        }99
-    }).withMessage('Email registrado'),
+        return db.User.findOne({
+            where : {
+                correo : value
+            }
+        }).then(user => {
+            if(user){
+                return Promise.reject()
+            }
+        })
+    }).withMessage('El email ya está registrado'),
 
     check('password')
     .isLength({
@@ -29,7 +29,7 @@ module.exports = [
 
     body('password2')
     .custom((value,{req}) => {
-        if(value !== req.body.pass){
+        if(value !== req.body.password){
             return false
         }
         return true

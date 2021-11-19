@@ -4,16 +4,31 @@
            <a href="/"> <img src="/images/SNIKERS.png" alt=""></a>
         </div>
         <label for="navmenu"><div class="icon-burger"><i class="fas fa-bars"></i></div></label>
-        <div class="search-bar"><form action=""> <input class="px-3 py-1" type="text" name="search" id="" placeholder="Buscar producto..."><button type="submit" ><i class="fas fa-search"></i></button></form></div>
+        <div class="search-bar">
+            <form action=""> 
+                <input class="px-3 py-1" type="text" name="search" id="" placeholder="Buscar producto...">
+                <button type="submit" ><i class="fas fa-search"></i></button>
+            </form>
+        </div>
     </nav>
     <input type="checkbox" id="navmenu">
     <nav class="menu">
         <ul>
+
             <li><a href="/">Home<i class="fas fa-home"></i></i></a></li>
-            <li><a href="/users/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
-            <li><a href="/users/register">Registro<i class="fas fa-user-plus"></i></a></li>
             <li><a href="/cart">Carrito<i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="/admin">admin<i class="fas fa-shopping-cart"></i></a></li>
+            <% if (locals && locals.userLogin) { %>
+                <li><a href="/users/profile"><%= locals.userLogin.nombre %> <i class="fas fa-id-card"></i></a></li>
+                <li><a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i> </a></li>
+             
+                <% if (locals.userLogin.admin === 1) { %>
+                    <li><a href="/admin">Admin<i class="fas fa-users-cog"></i></a></li>
+                <% } %>
+            <% }else{ %>
+            <li><a href="/users/login">Login <i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="/users/register">Registro <i class="fas fa-user-plus"></i></a></li>
+            <% } %>
+          
         </ul>
     </nav>
 </header>
