@@ -12,7 +12,7 @@ module.exports=(sequelize,dataTypes)=>{
         },
 
         precio: {
-            type:dataTypes.DECIMAL(10,2),
+            type:dataTypes.INTEGER,
             allowNull:false
         },
         marca_id: {
@@ -39,10 +39,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'products',
-    timestanps:false,
+    timestamps:false,
 
 }
-const Product=sequelize(alias,cols,config)
+const Product=sequelize.define(alias,cols,config)
 
 Product.associate=models=>{
     Product.belongsTo(models.Brand,{
@@ -70,8 +70,8 @@ Product.associate=models=>{
         as:'usuarios',
         through:'cart_shop',
         foreignKey:'product_id',
-        otherKey:'user_id'
-    
+        otherKey:'user_id',
+        timestamps:false,
     })
 }
 return Product

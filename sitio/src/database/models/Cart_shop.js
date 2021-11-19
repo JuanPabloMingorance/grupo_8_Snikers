@@ -21,10 +21,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'cart_shop',
-    timestanps:false,
+    timestamps:false,
 
 }
-const Cart=sequelize(alias,cols,config)
+const Cart=sequelize.define(alias,cols,config)
 
 
 return Cart

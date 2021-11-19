@@ -14,10 +14,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'categories',
-    timestanps:false,
+    timestamps:false,
 
 }
-const Category=sequelize(alias,cols,config)
+const Category=sequelize.define(alias,cols,config)
 
 Category.associate=models=>{
     Category.hasMany(models.Product,{

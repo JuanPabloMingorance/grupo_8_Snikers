@@ -8,11 +8,23 @@
         <img id="codigob"src="/images/barra1.png">
         <h4> REGISTRO</h4>
         <form action="" method="POST">
-        <label class=registro1 for="name">Nombre</label><input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre">
-        <label class=registro1 for="apellidos">Apellido</label><input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido">
-        <label class=registro1 for="correo">Email</label> <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-        <label class=registro1 for="password">Password</label><input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
-        <label class=registro1 for="password">Password 2</label><input class="controls" type="password" name="password2" id="password2" placeholder="Ingrese su Contraseña">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido">
+                </div>
+                <div class="col-12">
+                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+                </div>
+                <div class="col-12 col-md-6">
+                   <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+                </div>
+                <div class="col-12 col-md-6">
+                   <input class="controls" type="password" name="password2" id="password2" placeholder="Confirme su Contraseña">
+                </div>
+            </div>
         <input type="checkbox" name="terminos" id="terminos"> <a href="#">Terminos y Condiciones</a>
         <input class="botons" type="submit" value="REGISTRATE">
         <p><a href="/users/login">¿Ya tengo Cuenta?</a></p>

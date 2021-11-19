@@ -14,10 +14,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'rols',
-    timestanps:false,
+    timestamps:false,
 
 }
-const Rol=sequelize(alias,cols,config)
+const Rol=sequelize.define(alias,cols,config)
 
 Rol.associate=models=>{
     Rol.hasMany(models.User,{

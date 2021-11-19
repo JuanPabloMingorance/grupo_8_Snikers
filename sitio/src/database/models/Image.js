@@ -17,10 +17,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'images',
-    timestanps:false,
+    timestamps:false,
 
 }
-const Image=sequelize(alias,cols,config)
+const Image=sequelize.define(alias,cols,config)
 
 Image.associate=models=>{
     Image.belongsTo(models.Product,{

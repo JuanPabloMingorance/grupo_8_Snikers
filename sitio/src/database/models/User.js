@@ -30,10 +30,10 @@ module.exports=(sequelize,dataTypes)=>{
     }
 let config= {
     tableName:'users',
-    timestanps:false,
+    timestamps:false,
 
 }
-const User=sequelize(alias,cols,config)
+const User=sequelize.define(alias,cols,config)
 
 User.associate=models=>{
     User.belongsTo(models.Rol,{
@@ -45,8 +45,8 @@ User.associate=models=>{
         as:'productos',
         through:'cart_shop',
         foreignKey:'user_id',
-        otherKey:'product_id'
-    
+        otherKey:'product_id',
+        timestamps:false,
     })
 }
 return User

@@ -39,10 +39,10 @@
     flex-direction: row;
     justify-content: center;
     padding: 0 15px;
-    /* margin-top: 20px;*/
-    margin-top: 20px;
+    margin: 20px auto;
     background-color: white;
     text-transform: uppercase;
+    width: 90%;
 }
 
 .index .unico section p{
@@ -112,6 +112,10 @@
 
 .datos .caja1{
     padding-top: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
 }
 .index .unico section article .datos .caja1 p{
     color: black;
@@ -270,7 +274,10 @@
     .index .carrusel-final{
         width: 100%;
        
-        
-   
+    }
+
+    .index .unico .articulos{
+      
+        height: 350px;
     }
 }

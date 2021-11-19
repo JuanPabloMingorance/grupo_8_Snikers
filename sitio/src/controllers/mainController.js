@@ -1,19 +1,30 @@
-const fs = require("fs");
-const path = require("path");
-let productos = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "../data/productos.json"), "utf-8")
-);
+const toThousand =  n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../database/models')
 
 module.exports = {
   index: (req, res) => {
-    let ofertas = productos.filter(producto => producto.Seccion === 'oferta');
-    let destacados = productos.filter(producto => producto.Seccion === 'destacado');
-
-  return res.render("index", {
-      title: "Snikers",
-      ofertas,
-      destacados,
-    });
+    let ofertas = db.Product.findAll({
+      where : {
+        seccion_id : 1
+      },
+      include : [{all: true}]
+    })
+    let destacados = db.Product.findAll({
+      where : {
+        seccion_id : 2
+      },
+      include : [{all: true}]
+    })
+    Promise.all([ofertas,destacados])
+      .then(([ofertas, destacados]) => {
+        return res.render("index", {
+          title: "Snikers",
+          ofertas,
+          destacados,
+          toThousand
+        });
+      })
+      .catch(error => console.log(error))
   },
 
   search: (req, res) => {
