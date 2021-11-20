@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const { validationResult } = require('express-validator');
-
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     add: (req, res) => {
@@ -157,10 +158,26 @@ module.exports = {
         }
     },
     destroy: (req, res) => {
-        let productosModificados = productos.filter(producto => producto.id !== +req.params.id);
-
-        fs.writeFileSync(path.join(__dirname, '..', 'data', 'productos.json'), JSON.stringify(productosModificados, null, 2), 'utf-8');
-        return res.redirect('/admin')
+        db.Image.findOne({
+            where : {
+                product_id : req.params.id
+            }
+        }).then(image => {
+            if (fs.existsSync(path.join(__dirname, '../../public/images/products', image.file))) {
+                fs.unlinkSync(path.join(__dirname, '../../public/images/products', image.file))
+            }
+            db.Image.destroy({
+                where : {
+                    id : req.params.id
+                }
+            }).then( () => {
+                db.Product.destroy({
+                    where : {
+                        id : req.params.id
+                    }
+                }).then( () => res.redirect('/admin')) 
+            })
+        }).catch(error => console.log(error))
     },
 
 }
