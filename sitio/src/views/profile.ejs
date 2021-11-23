@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %> 
+<body class="login">
+   <% include partials/header %> 
+    <main>
+        <div class="container">
+            <div class="form">
+                <h1>Perfil de usuario</h1>
+                <form action="/users/update/<%= locals.userLogin.id %>?_method=PUT" method="POST" id="form-profile">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <input class="form-control"  type="text" name="nombre" id="nombre" value=<%= usuario.nombre %> >
+                            <span id="error-nombre" class="text-danger small"><%= locals.errores && locals.errores.nombre ? locals.errores.nombre.msg : null %></span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input  class="form-control" type="apellido" name="apellido" id="apellido" value=<%= usuario.apellido %> >
+                            <span id="error-apellido" class="text-danger small"><%= locals.errores && locals.errores.apellido ? locals.errores.apellido.msg : null %></span>
+                        </div>
+                    </div>
+                    <button id="btn-password" class="mt-4" value="contraseña" type="button">Cambiar contraseña</button>
+                    <div class="row mt-3" id="box-password" style="display:none">
+                        <div class="col-12 col-md-6">
+                            <input  class="form-control" type="password" name="password" id="password" placeholder="nueva contraseña" >
+                            <span id="error-password" class="text-danger small"><%= locals.errores && locals.errores.password ? locals.errores.password.msg : null %> </span>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <input class="form-control"  type="password" name="password2" id="password2" placeholder="confirme contraseña" >
+                            <span id="error-password2" class="text-danger small"><%= locals.errores && locals.errores.password2 ? locals.errores.password2.msg : null %> </span>
+                        </div>
+                    </div>
+                    <button class="mt-4" type="submit">Guardar cambios</button>
+                    <p class="text-danger text-center mt-3" id="error-empty"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <% include partials/footer%> 
+    <script src="/javascript/profile.js"></script>
+</body>
+</html>
+</body>
+</html>

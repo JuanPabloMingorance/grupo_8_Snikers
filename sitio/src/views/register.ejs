@@ -7,41 +7,41 @@
     <section class="form-register">
         <img id="codigob"src="/images/barra1.png">
         <h4> REGISTRO</h4>
-        <form action="" method="POST">
+        <form action="" method="POST" autocomplete="off" id="form-register">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <input class="controls" type="text" name="nombre" id="nombres" placeholder="Ingrese su Nombre" value=<%= locals.old && locals.old.nombre ? locals.old.nombre : null  %> >
-                    <span class="text-danger small"><%= locals.errores && locals.errores.nombre ? locals.errores.nombre.msg  : null%> </span>
+                    <input class="controls form-control" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" value=<%= locals.old && locals.old.nombre ? locals.old.nombre : null  %> >
+                    <span id="error-nombre" class="text-danger small"><%= locals.errores && locals.errores.nombre ? locals.errores.nombre.msg  : null%> </span>
                 </div>
                 <div class="col-12 col-md-6">
-                    <input class="controls" type="text" name="apellido" id="apellidos" placeholder="Ingrese su Apellido" value=<%= locals.old && locals.old.apellido ? locals.old.apellido : null  %>>
-                    <span class="text-danger small"><%= locals.errores && locals.errores.apellido ? locals.errores.apellido.msg : null %> </span>
+                    <input class="controls form-control" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" value=<%= locals.old && locals.old.apellido ? locals.old.apellido : null  %>>
+                    <span id="error-apellido" class="text-danger small"><%= locals.errores && locals.errores.apellido ? locals.errores.apellido.msg : null %> </span>
                 </div>
                 <div class="col-12">
-                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" value=<%= locals.old && locals.old.correo ? locals.old.correo : null  %>>
-                    <span class="text-danger small"><%= locals.errores && locals.errores.correo ? locals.errores.correo.msg : null %> </span>
+                    <input class="controls form-control" type="email" name="correo" id="correo" placeholder="Ingrese su email" value=<%= locals.old && locals.old.correo ? locals.old.correo : null  %>>
+                    <span id="error-correo" class="text-danger small"><%= locals.errores && locals.errores.correo ? locals.errores.correo.msg : null %> </span>
                 </div>
                 <div class="col-12 col-md-6">
-                   <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
-                   <span class="text-danger small"><%= locals.errores && locals.errores.password ? locals.errores.password.msg  : null%> </span>
+                   <input class="controls form-control" type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+                   <span id="error-password" class="text-danger small"><%= locals.errores && locals.errores.password ? locals.errores.password.msg  : null%> </span>
                 </div>
                 <div class="col-12 col-md-6">
-                   <input class="controls" type="password" name="password2" id="password2" placeholder="Confirme su Contraseña">
-                   <span class="text-danger small"><%= locals.errores && locals.errores.password2 ? locals.errores.password2.msg : null %> </span>
+                   <input class="controls form-control" type="password" name="password2" id="password2" placeholder="Confirme su contraseña">
+                   <span  id="error-password2"class="text-danger small"><%= locals.errores && locals.errores.password2 ? locals.errores.password2.msg : null %> </span>
                 </div>
             </div>
-        <input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Terminos y Condiciones</label> 
+        <input class="mt-3" type="checkbox" name="terminos" id="terminos"> <label for="terminos">Terminos y Condiciones</label> 
         <div>
-            <span class="text-danger small"><%= locals.errores && locals.errores.terminos ? locals.errores.terminos.msg : null %> </span>
+            <span id="error-terminos" class="text-danger small"><%= locals.errores && locals.errores.terminos ? locals.errores.terminos.msg : null %> </span>
 
         </div>
-
+        <span id="error-empty" class="text-danger small text-center"></span>
         <input class="botons" type="submit" value="REGISTRATE">
         <p><a href="/users/login">¿Ya tengo Cuenta?</a></p>
     </form>
       </section>
      
       <% include partials/footer %> 
-
+      <script src="/javascript/register.js"></script>
 </body>
 </html>

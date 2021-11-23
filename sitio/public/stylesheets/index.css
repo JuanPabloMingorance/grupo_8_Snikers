@@ -1,8 +1,7 @@
 
-
-
-
-
+#nikeDesktop{
+    display: none;
+}
 .index .imagen1,  .index .imagen2{
     width: 100%; 
     
@@ -70,7 +69,7 @@
     background-color:white;
 }
 
-.index .unico section article{
+.index .unico  article{
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -80,6 +79,13 @@
     margin-bottom: 20px;
     margin-left: 0%;
     margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.index .unico  article:hover{
+    transform: scale(1.07) ;
+    -webkit-transform: scale(1.07) ;
+    -moz-transform: scale(1.07) ;
 }
 
 .index .unico .art2, .index .unico .art3, .index .unico .art4{
@@ -234,7 +240,12 @@
 
 @media (min-width: 768px){
 
-    
+    #nikeDesktop{
+        display: block;
+    }
+    #nikeMobile{
+        display: none;
+    }
      .index .datos .caja1{
         order: 0;
     }
@@ -274,10 +285,5 @@
     .index .carrusel-final{
         width: 100%;
        
-    }
-
-    .index .unico .articulos{
-      
-        height: 350px;
     }
 }

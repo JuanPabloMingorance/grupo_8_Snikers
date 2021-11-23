@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head',{title: "Resultado de la búsqueda" }) %>
+
+    <body class="index">
+        <% include partials/header %>
+            <main>
+                <div class="container-fluid">
+                    <div class="unico">
+                        <section>
+                            <div class="carrusel-Ofertas">
+                                <% if (productos.length> 0) { %>
+                                    <div>
+                                        <p>Resultado de la búsqueda: <%= keywords %>
+                                        </p>
+                                        <hr>
+                                    </div>
+                                    <div class="row">
+                                        <% productos.forEach(producto=> { %>
+                                            <div class="col-12 col-md-4 col-lg-3">
+                                                <section class="articulos">
+                                                    <a href="/products/detail/<%= producto.id %> ">
+                                                        <article>
+                                                            <img src="/images/products/<%= producto.imagenes[0].file %> "
+                                                                alt="">
+                                                            <div class="datos">
+                                                                <div class="caja1">
+                                                                    <h4>
+                                                                        <%= producto.nombre %>
+                                                                    </h4>
+                                                                    <h5 class="text-end">
+                                                                        $ <%= toThousand(producto.precio) %>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="caja2">
+
+                                                                    <div class="heart">
+                                                                        <%= producto.marca.nombre %>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </article>
+                                                    </a>
+                                                </section>
+                                            </div>
+                                            <% }) %>
+                                    </div>
+                                    <% }else{ %>
+                                        <p>No hay resultados para la búsqueda: <%= keywords %>
+                                        </p>
+                                        <hr>
+                                        <% } %>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+
+            </main>
+            <footer class="d-flex flex-column flex-md-row justify-content-around py-5 <%= productos.length == 0 && 'position-fixed bottom-0' %>  ">
+                <a class="text-white h6" href="/">Contacto </a>
+                <a class="text-white h6" href="/">Acerca de nosotros</a>
+                <a class="text-white h6" href="/">Politica de Privacidad</a>
+          </footer>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossorigin="anonymous"></script>
+                <script src="/javascript/glider.js"></script>
+                <script src="/javascript/index.js"></script>
+    </body>
+
+</html>

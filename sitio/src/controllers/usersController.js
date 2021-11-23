@@ -81,11 +81,53 @@ module.exports = {
     },
 
     profile: (req, res) => {
-        return res.render('profile', {
-            title: 'perfil de usuarios',
-            productos
-        })
+        db.User.findByPk(req.session.userLogin.id)
+            .then(usuario => {
+                return res.render('profile', {
+                    title: 'Perfil de usuario',
+                    usuario
+                })
+            })
+            .catch(error=> console.log(error))
     },
+    update : (req,res) => {
+        const {nombre,apellido,password } = req.body;
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+
+        db.User.findByPk(req.params.id)
+            .then(usuario => {
+                console.log(usuario)
+                db.User.update(
+                    {
+                        nombre,
+                        apellido,
+                        password : password.trim().length > 0 ? bcryptjs.hashSync(password ,10): usuario.password
+                    },
+                    {
+                        where : {
+                            id : req.params.id
+                        }
+                    }
+                ).then( () => {
+                    req.session.userLogin.nombre = nombre;
+                    res.locals.userLogin = req.session.userLogin
+                    return res.redirect('/')
+                })
+            })
+            .catch(error => console.log(error))
+        }else{
+            db.User.findByPk(req.session.userLogin.id)
+            .then(usuario => {
+                return res.render('profile', {
+                    title: 'Perfil de usuario',
+                    usuario,
+                    errores : errors.mapped()
+                })
+            })
+            .catch(error=> console.log(error))
+        }
+        },
     logout: (req, res) => {
         req.session.destroy();
         res.cookie('usuarioRemember', null, { maxAge: -1 })

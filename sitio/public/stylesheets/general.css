@@ -23,6 +23,11 @@ a{
     color: black;
 }
 
+a:hover{
+    color: initial;
+}
+
+
 li{
     list-style: none;
 }

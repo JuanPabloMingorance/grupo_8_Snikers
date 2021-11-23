@@ -3,6 +3,16 @@
     background-color: var(--color-gris);
 }
 
+.productDetail .item-carousel{
+    transition: all .5s ease;
+}
+
+.productDetail .item-carousel:hover{
+    transform: scale(1.05) ;
+    -webkit-transform: scale(1.05) ;
+    -moz-transform: scale(1.05) ;
+}
+
 .producto main{
     display: flex;
     flex-wrap: wrap;

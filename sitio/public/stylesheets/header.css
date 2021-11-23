@@ -233,4 +233,9 @@ header nav.logo-and-search{
        width: 200px;
        padding: 2px;
     }
+    header nav.menu {
+        height: 60px  ;
+       
+    }
+    
 }

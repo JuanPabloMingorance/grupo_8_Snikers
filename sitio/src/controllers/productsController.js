@@ -2,6 +2,7 @@ const db = require('../database/models');
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const {Op} = require('sequelize');
 
 module.exports = {
     add: (req, res) => {
@@ -69,11 +70,37 @@ module.exports = {
     },
 
     detail: (req, res) => {
-        let producto = productos.find(producto => producto.id === +req.params.id)
-        return res.render('productDetail', {
-            productos,
-            producto
+        db.Product.findByPk(req.params.id, {
+            include : [{ all: true }]
         })
+            .then(producto => {
+                db.Product.findAll({
+                    where : {
+                        [Op.or] : [
+                            {
+                                categoria_id :  {
+                                    [Op.like] : producto.categoria_id
+                                }
+                            },
+                            {
+                                marca_id : {
+                                    [Op.like] : producto.marca_id
+                                }
+                            }
+                        ]
+                    },
+                    include : [{ all: true }]
+                })
+                .then(productos => {
+                    return res.render('productDetail', {
+                        producto,
+                        productos
+                    })
+            })
+      
+     
+        }).catch(error => console.log(error))
+     
     },
 
     edit: (req, res) => {

@@ -1,5 +1,6 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
+const {Op} = require('sequelize');
 
 module.exports = {
   index: (req, res) => {
@@ -7,20 +8,34 @@ module.exports = {
       where: {
         seccion_id: 1
       },
-      include: [{ all: true }]
+      include: [{ all: true }],
+      limit: 4
     })
     let destacados = db.Product.findAll({
       where: {
         seccion_id: 2
       },
+      include: [{ all: true }],
+      limit: 4
+    })
+    let productos = db.Product.findAll({
       include: [{ all: true }]
     })
-    Promise.all([ofertas, destacados])
-      .then(([ofertas, destacados]) => {
+    Promise.all([ofertas, destacados, productos])
+      .then(([ofertas, destacados, productos]) => {
+        let adidas = productos.filter(producto => producto.marca.nombre == "Adidas");
+        let nike = productos.filter(producto => producto.marca.nombre == "Nike");
+        let yezzy = productos.filter(producto => producto.marca.nombre == "Yezzy");
+        let jordan = productos.filter(producto => producto.marca.nombre == "Jordan");
         return res.render("index", {
           title: "Snikers",
           ofertas,
           destacados,
+          productos,
+          adidas,
+          nike,
+          yezzy,
+          jordan,
           toThousand
         });
       })
@@ -28,18 +43,31 @@ module.exports = {
   },
 
   search: (req, res) => {
-    if (req.query.busqueda) {
-      let resultado = productos.filter((producto) =>
-        producto.Nombre.toLowerCase().includes(req.query.busqueda.toLowerCase())
-      );
-      return res.render("index", {
-        title: "Resultado de Búsqueda",
-        productos: resultado,
-        busqueda: req.query.busqueda,
+    db.Product.findAll({
+      where: {
+        [Op.or]: [
+          {
+            nombre: {
+              [Op.substring]: req.query.keywords
+            }
+          },
+          {
+            descripcion: {
+              [Op.substring]: req.query.keywords
+            }
+          }
+        ]
+      },
+      include: [{ all: true }],
+    })
+      .then(productos => {
+        return res.render('search', {
+          productos,
+          keywords: req.query.keywords,
+          toThousand,
+        })
       })
-    }
-    return res.redirect('/')
-
+      .catch(error => console.error(error))
   },
 
   admin: (req, res) => {

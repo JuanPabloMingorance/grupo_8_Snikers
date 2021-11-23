@@ -23,9 +23,9 @@ module.exports = [
 
     check('password')
     .isLength({
-        max : 6,
-        min : 3
-    }).withMessage('La contraseña debe tener un mínimo de 3 y un máximo de 6 caracteres'),
+        max : 12,
+        min : 6
+    }).withMessage('La contraseña debe tener un mínimo de 6 y un máximo de 12 caracteres'),
 
     body('password2')
     .custom((value,{req}) => {

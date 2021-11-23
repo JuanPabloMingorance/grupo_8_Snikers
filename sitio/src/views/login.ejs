@@ -18,7 +18,7 @@
                         <label class=text-center for="remember">Recordar</label>
 
                     <button class="mt-4" type="submit"><i class="fas fa-check"></i></button>
-                    <small><%= locals.errores && errores.correo ? errores.correo.msg : null%></small>
+                    <p class="text-danger h5 text-center mt-2"><%= locals.errores && errores.correo ? errores.correo.msg : null%></p>
                 </form>
             </div>
         </div>
