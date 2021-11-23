@@ -85,26 +85,20 @@ module.exports = {
   },
 
   cart: (req, res) => {
-    return res.render("cart", {
-      productos
-    });
+    return res.render("cart")
+
+  
   },
 
   cartEntrega: (req, res) => {
-    return res.render("cartEntrega", {
-      productos
-    });
+    return res.render("cartEntrega");
   },
 
   cartPago: (req, res) => {
-    return res.render("cartPago", {
-      productos
-    });
+    return res.render("cartPago");
   },
 
   cartFinal: (req, res) => {
-    return res.render("cartFinal", {
-      productos
-    });
+    return res.render("cartFinal");
   }
 };
